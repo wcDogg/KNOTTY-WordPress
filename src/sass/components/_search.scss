@@ -1,0 +1,30 @@
+// 
+// Default WP Search Form
+//
+
+form.search-form {
+    label {}
+        span.screan-reader-text {}
+        input[type="search"] {}
+        input[type="submit"] {}
+        input.search-field {}
+        input.search-submit {}
+
+} // 
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    .search-field {
+        margin: 0;
+    }
+    .search-submit {
+        margin: 0.62rem;
+    }
+
+} //
+

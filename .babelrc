@@ -1,0 +1,27 @@
+{
+    // "sourceMaps": true,
+    "comments": false,
+
+    "ignore": [
+        // "dir_3/**/*.js" 
+    ],
+
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "modules": false,
+                "targets": { "browsers": ["last 2 versions"] },                
+            },
+        ],
+        [
+            "minify", 
+            { 
+                // https: //github.com/babel/minify/issues/904
+                "builtIns": false, 
+                // "removeConsole": true,
+                // "removeDebugger": true,                
+            }
+        ],
+    ],
+}

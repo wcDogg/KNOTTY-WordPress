@@ -1,0 +1,19 @@
+// 
+// Page Section Backgrounds
+// 
+
+article .section:nth-child(4n+1) {
+    @include bg-01;
+}
+
+article .section:nth-child(4n+2) {
+    @include bg-02;
+}
+
+article .section:nth-child(4n+3) {
+    @include bg-03;
+}
+
+article .section:nth-child(4n) {
+    @include bg-04;
+}

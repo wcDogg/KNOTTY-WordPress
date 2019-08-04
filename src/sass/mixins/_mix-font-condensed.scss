@@ -1,0 +1,23 @@
+@mixin condensed-400 {
+	font-family: $font-family__condensed;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@mixin condensed-400i {
+	font-family: $font-family__condensed;
+	font-style: italic;
+	font-weight: 400;
+}
+
+@mixin condensed-700 {
+	font-family: $font-family__condensed;
+	font-style: normal;
+	font-weight: 700;
+}
+
+@mixin condensed-700i {
+	font-family: $font-family__condensed;
+	font-style: italic;
+	font-weight: 700;
+}

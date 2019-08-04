@@ -1,0 +1,51 @@
+// 
+// @file /sass/nav/_links.scss
+// @this must come after /nav/_nav.scss
+//  
+
+
+a {
+	text-decoration: none;
+	border: 0;
+	outline: 0; // focus set globally
+	background: 0;
+} // 
+
+a {	
+	color: $color__link;
+
+	&:link, &:visited {}
+
+	&:hover, &:active, &:focus {
+		color: $color__link-h;
+	}	
+}
+
+// voodoo
+:not(.nav--icons) {
+
+	&.white a,
+	a.white {
+		color: #ffffff;
+		&:hover, &:active, &:focus {
+			color: $color__alt;
+		}		
+	}
+
+	&.primary a,
+	a.primary {
+		color: $color__primary;
+	}
+
+	&.secondary a,
+	a.secondary {
+		color: $color__secondary;
+	}
+
+	&.alt a,
+	a.alt {
+		color: $color__alt;
+	}	
+
+} // 
+

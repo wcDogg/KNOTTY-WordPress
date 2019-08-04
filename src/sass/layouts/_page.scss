@@ -1,0 +1,30 @@
+// 
+// Body + Article Classes
+//
+
+// Front
+body.home {}
+article {}
+// Post
+body.single.single-post {}
+article.post.type-post {}
+// Page
+body.page {}
+article.page.type-page {}
+// Archive
+body.archive.tax-xyz.term-zyx {}
+article {}
+// Search
+body.search.search-results {}
+article.search {}
+// 404
+body.error404 {}
+article.error-404.not-found {}
+
+
+// Privacy 
+body.page.privacy-policy {}
+// Contact
+body.page.page-id-322 {}
+// About
+body.page.page-id-918 {}

@@ -1,0 +1,62 @@
+
+// https://htmldog.com/guides/html/advanced/tables/
+
+
+// 
+// Table Classes
+// 
+
+.table {}
+.table--responsive {}
+
+
+// 
+// Table Base
+// 
+
+table {
+    display: block;    
+    width: fit-content;
+    max-width: 100%;   
+    overflow-x: auto;    
+    border-collapse: collapse;     
+    margin: auto;
+    @extend %small;
+    caption {}
+    thead {}
+    tr {}    
+    th { text-align: left; }
+    td { white-space: nowrap; }
+    th, td { padding: 0.4em 0.5em;}
+    .meta { font-size: inherit; }
+}
+
+// 
+// Table Styles
+// 
+
+table {
+    background: $bg__content;
+    border: $border__content;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    caption {
+        padding: 1em 0.5em 0.5em 0.5em;
+    }
+    thead {
+        border-bottom: 1px dotted #FFFFFF;
+    }
+    tr:not(:last-of-type) {
+        border-bottom: $border__content;
+    }
+    tr td:not(:last-child) {
+        border-right: $border__content;
+    }  
+    thead tr {
+        border: 0;
+    }
+}
+
+table img {
+    max-width: 300px;
+}

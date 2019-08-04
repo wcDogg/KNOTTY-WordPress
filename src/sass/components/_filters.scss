@@ -1,0 +1,69 @@
+// 
+// FacetWP filters on '/lubricants'
+// 
+
+// 
+// Facet Classes
+// This theme uses the 'fselect' facet type exclusively
+// 
+
+.section__filters {
+    div.facet {}
+        label {}
+        div.facetwp-facet {
+            &[data-type='categories'] {}
+            &[data-name='tags'] {}
+        }
+        div.facet-wp-facet {
+            div.fs-wrap {}
+                div.fs-label {}
+                div.fs-dropdown {}
+                    div.fs-search {}
+                    div.fs-options {}
+                        div.fs-option {} // [data-value='tax-slug']
+                            span.fs-checkbox {}
+                            div.fs-option-label {}
+                                span.facetwp-counter {}                    
+        }   
+   a {}  // reset link        
+}
+
+// 
+// Facet Styles
+// This theme uses the 'fselect' facet type exclusively
+// 
+
+.facet {
+    line-height: 1;
+}
+
+.facet > label {
+    margin-bottom: 0.5rem;
+}
+
+.facetwp-facet {
+    margin-bottom: 0 !important;
+    color: $color__input-text;
+    @extend %small;
+}
+
+.fs-wrap {
+    width: 100% !important;
+}
+
+.fs-dropdown {
+    width: auto !important;
+}
+
+.facetwp-facet:not(.facetwp-facet-lubricant_ingredients) {
+    .fs-search {
+        display: none !important;
+    }  
+}
+
+.fs-options .facetwp-counter {
+    float: right;
+    padding-left: 1rem;
+}
+
+

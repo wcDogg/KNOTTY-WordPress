@@ -1,0 +1,74 @@
+
+// Must be 71%
+$size__oval: 70%;
+
+@mixin bg-01 ($bg: $bg__gradient-dk, $oval: $bg__gradient-lt) {
+    // at right top,     
+	background: 
+		radial-gradient(
+			at 100% 0%,
+			$oval $size__oval, 
+			transparent $size__oval, 
+		),
+		$bg;
+} //
+
+@mixin bg-02 ($bg: $bg__gradient-dk, $oval: $bg__gradient-lt) {
+    // at left bottom,
+	background: 
+		radial-gradient(			
+			at 0% 100%,
+			$oval $size__oval, 
+			transparent $size__oval, 
+		),
+		$bg;
+} //
+
+@mixin bg-03 ($bg: $bg__gradient-dk, $oval: $bg__gradient-lt) {
+    // at left top,
+	background:
+		radial-gradient(			
+			at 0% 0%,
+			$oval $size__oval, 
+			transparent $size__oval, 
+		),
+		$bg;
+} //
+
+@mixin bg-04 ($bg: $bg__gradient-dk, $oval: $bg__gradient-lt) {
+    // at right bottom,
+	background: 
+		radial-gradient(		
+			at 100% 100%,
+			$oval $size__oval, 
+			transparent $size__oval, 
+		),
+		$bg;
+}
+
+@mixin bg-oval($bg: transparent, $oval: $color__text-lt, $angle: 15deg) {
+
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+	background: $bg;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		transform: rotate($angle);
+		background: 
+			radial-gradient(
+				at 50% 50%,
+				$oval 58%, 
+				transparent 58%, 
+			),
+			transparent;
+	}
+
+}

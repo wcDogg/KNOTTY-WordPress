@@ -1,0 +1,36 @@
+//
+// @file /sass/globals/_theme-globals.scss
+//
+
+// Include (true) or exclude (false) example code wrapped in:
+// `@include test-mode {}`
+
+$test-mode: true;
+
+
+// This global is the size of 1rem.
+// The only place this $global is used directly is on 'html' (root). 
+// Everywhere else uses '@include font-size();' in place of `font-size`.
+// Changing this $global cascades to all fonts defined with this @mixin.
+
+$font-size: 22px;
+
+//
+// Max width
+// 
+
+$max-width: 840px;
+
+
+// This theme uses system font stacks.
+// The only place these globals are used directly are in @mixins
+// @see /docs/quic-grab_fonts.scss
+
+$font-family__sans: 'Roboto', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Segoe UI', sans-serif,  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__serif: 'Georgia', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__mono: 'Menolo', 'Consolas', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__condensed: 'Roboto Condensed', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Segoe UI', sans-serif,  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+

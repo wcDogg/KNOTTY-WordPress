@@ -1,0 +1,197 @@
+// 
+// Card Classes
+// 
+.card {}
+.card.post {}
+.card.page {}
+
+.card {
+	.card__imgage {}
+		img {}
+
+	.card__header {}
+		.card__meta {}
+		.card__title-wrap {}
+			.card__title {}
+			.card__subtitle {}
+
+	.card__main {}
+		.card__buy {}
+		nav.buy {}	
+}
+
+
+
+// 
+// Single Lubricant + Post + Page Cards
+// 
+
+.card.post,
+.card.page {
+
+    display: grid;
+
+	.card__image  {grid-area: c-img; align-self: stretch;}
+	.card__header {grid-area: c-head;}
+	.card__main   {grid-area: c-main;}
+
+	.card__image { 
+		display: grid; // for object-fit
+	}
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;		
+	}
+
+	// .buy {
+	// 	margin: 0.6rem 0 0.4rem 0;
+	// }	
+
+} // 
+
+// Small screen
+@media screen and (max-width: 600px) {
+	.card.lubricant,
+	.card.post,
+	.card.page {
+		grid-template-columns: 1fr;	
+		grid-template-areas: 
+			'c-img'
+			'c-head'
+			'c-main';
+
+		.card__image {
+			height: 120px;
+		}
+	}
+
+} // 
+
+// Big screen
+@media screen and (min-width: 601px) {
+	.card.lubricant,
+	.card.post,
+	.card.page {
+		grid-template-columns: 128px 1fr;	
+		grid-template-areas: 
+		'c-img c-head'
+		'c-img c-main';
+	}
+}
+
+
+// 
+// Single Card Shared 
+// 
+
+.card {
+    padding: 0;
+    background: $bg__content;
+	border: $border__content;
+
+	.card__header { 
+		padding: 0.5rem; 
+	}
+	.card__title-wrap {
+		display: block;
+	}	
+	.page__title {
+		@include font-size(1.6);
+		color: inherit;
+	}
+	.page__subtitle {
+		@include font-size(1.125);
+	}
+	.card__main {
+		padding: 0 0.5rem 0.5rem 0.5rem; 	
+	}
+
+} // 
+
+
+.card__main {
+	p {
+		@include font-size(0.79);
+	}
+	p:first-of-type {
+		margin-top: 0;
+		padding-top: 0;
+	}
+	p:last-of-type {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+}
+
+.card__meta {
+	display: flex;
+	flex-wrap: wrap;
+
+	.meta:not(:last-of-type) {
+		margin-right: 1em;
+	}
+}
+
+
+
+// // NOT Implemented 
+// // SccardPin.js
+// // 
+
+// // Defualt fade in-out
+// .card[data-sccard-pin] {
+//     -webkit-animation-duration: 500ms;
+//     animation-duration: 500ms;
+//     -webkit-animation-fill-mode: both;
+// 	animation-fill-mode: both;
+
+// 	// All cards fade out
+// 	&[data-sccard-pin="false"] {
+// 		-webkit-animation-name: fadeOut;
+// 		animation-name: fadeOut;
+// 	}
+
+// }
+
+// // Default fade in
+// // Simpler rule without needing another class in markup?
+// .card:not(.card--from-left):not(.card--from-right):not(.card--lightspeed-in) {	
+// 	&[data-sccard-pin="true"] {
+// 		-webkit-animation-name: fadeIn;
+// 		animation-name: fadeIn;
+// 	}
+// }
+
+// // Slide in from left	
+// .card--from-left {
+// 	&[data-sccard-pin="true"] {
+// 		-webkit-animation-name: fadeInLeft;
+// 		animation-name: fadeInLeft;		
+// 	}
+// 	// &[data-sccard-pin="false"] {}
+// }
+
+// // Slide in from right
+// .card--from-right {
+// 	&[data-sccard-pin="true"] {
+// 		-webkit-animation-name: fadeInRight;
+// 		animation-name: fadeInRight;
+// 	}
+// 	// &[data-sccard-pin="false"] {}
+// }
+
+// // Ligbtspeed in
+// .card--lightspeed-in {
+// 	&[data-sccard-pin="true"] {
+// 	-webkit-animation-name: lightSpeedIn;
+// 	animation-name: lightSpeedIn;
+// 	-webkit-animation-timing-function: ease-out;
+// 	animation-timing-function: ease-out;
+// 	}
+// 	// &[data-sccard-pin="false"] {}
+// }
+
+// // End not implemented

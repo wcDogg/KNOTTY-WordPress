@@ -1,0 +1,44 @@
+// 
+// Meta Classes
+// 
+div.meta {}
+span.meta {}
+.meta {
+    i {}
+    span.meta__value {}
+}
+
+
+// 
+// Meta Base
+// 
+.meta {
+    @include condensed-400;
+    @extend %small;
+    line-height: 1;
+    
+    i {}
+    .meta__value {}
+
+} //
+
+
+div.meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 0.5em;
+    padding: 0.5rem 0.25rem;
+} //
+
+
+span.meta {
+    i {
+        margin-right: 0.25em;
+    }
+} // 
+
+
+// 
+// Meta One-Offs
+// 
+

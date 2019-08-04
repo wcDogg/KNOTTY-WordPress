@@ -1,0 +1,11 @@
+// 
+// @this /sass/mixins/_mix-focus.scss
+//
+// This theme's global focus style for links, buttons, inputs, etc.
+// 
+
+
+@mixin focus {
+		outline: 4px dashed $color__focus;
+}
+ 

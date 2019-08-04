@@ -1,0 +1,315 @@
+// 
+// @this /sass/bits/_input.scss
+// 
+
+//
+// Extend
+// 
+
+%input {
+    @include sans-400;
+    @include font-size();
+    color: $color__input-text;
+    border: $border__input;
+    border-radius: $border-radius__input;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
+    background: #ffffff;
+    margin-top: 0.5rem;    
+    margin-bottom: 1rem;
+}
+
+%input-bg {
+    background-size: 1em 1em;
+    background-position: 0.25em;
+    background-repeat: no-repeat;    
+    padding-left: 1.5em;
+}
+
+// 
+// Labels
+// 
+
+fieldset {
+    @extend %input;
+    padding: 0.2rem;
+    padding-right: 0.5rem;
+}
+
+label, legend {
+    @include condensed-400;    
+    @extend %small;
+    line-height: 1;
+    color: $color__heading;
+    text-transform: uppercase;
+}
+
+label {
+    display: block;    
+}
+
+fieldset label {
+    display: inline;
+    cursor: pointer;
+}
+
+
+// 
+// Radio + Check
+// BG images work in Chrome, FF, Opera
+// Edge falls back to no images
+// 
+
+[type="radio"],
+[type="checkbox"] {
+    cursor: pointer;  
+	// -webkit-appearance: none;
+	//    -moz-appearance: none;
+    //         appearance: none;
+    // font-size: 0.8rem;
+    // line-height: 1; 
+    // display: inline-flex;   
+	// &::before {
+    //     content: '';
+    //     width: 1em;
+    //     height: 1em;    
+    //     background-size: 1em 1em;
+    //     background-position: 0;
+    //     background-repeat: no-repeat; 
+	// }
+
+	&:hover,
+	&:active,
+	&:focus {}  
+
+	&:checked {}
+
+} // radio checkbox
+
+
+[type="radio"] {
+    
+	// &:checked {}
+
+	// &::before {
+    //     background-image: url(./assets/placeholders/ph.circle.svg);
+    // }
+	// &:checked::before {
+    //     background-image: url(./assets/placeholders/ph.dot.svg);
+    // }
+}
+
+[type="checkbox"] {
+	// &:checked {}
+
+	// &::before {
+    //     background-image: url(./assets/placeholders/ph.square.svg);
+    // }
+	// &:checked::before {
+    //     background-image: url(./assets/placeholders/ph.check.svg);
+    // }
+}
+
+
+// 
+// No type + Undefined
+// 
+
+:not([type]) {}
+
+[type=""] {}
+
+
+// 
+// Read only
+// 
+
+// [type="readonly"] {
+// 	cursor: not-allowed;
+// 	font-weight: bold;	
+//     color: $color__text-lt;
+//     padding: 0.15em;
+// }
+
+
+// 
+// File 
+// 
+
+// [type="file"] {
+//     @extend %input;    
+// 	cursor: pointer;	
+//     display: flex;
+
+// 	&::-webkit-file-upload-button {    
+// 		-webkit-appearance: button; 
+//         cursor: pointer;	
+// 		color: #fff;
+//         border: 0;
+//         border-radius: $border-radius__input, 0px, 0px, $border-radius__input;
+// 		transition: background-color, 250ms;
+// 	} 
+
+// 	&:hover {
+// 		&::-webkit-file-upload-button {
+//             background-color: $color__text;
+//         } 
+// 	} 
+// } 
+
+
+// 
+// Color
+// 
+
+// [type="color"] {	
+//     cursor: pointer;
+//     height: 1.5rem;
+//     width: 1.5rem;
+//     margin-top: 0.5rem;    
+//     margin-bottom: 1rem;    
+//     background-color: transparent;
+//     border: 0;
+// }
+
+
+// 
+// Range
+// 
+
+// [type="range"] {
+//     cursor: pointer;
+//     margin-top: 0.5rem;    
+//     margin-bottom: 1rem;    
+//     padding: 0.25rem;
+// }	
+
+
+// Input radio + check
+[type="radio"] {}
+[type="checkbox"] {}
+
+
+// 
+// Inputs with spinners + pickers
+// 
+
+[type="date"] {
+    @extend %input;
+    padding-left: 4px;
+}
+
+[type="month"] {
+    @extend %input;
+    padding-left: 4px;
+}
+
+[type="week"] {
+    @extend %input;
+    padding-left: 4px;
+}
+
+[type="time"] {
+    @extend %input;
+    padding-left: 4px;
+}
+
+[type="number"] {
+    @extend %input;
+    padding-left: 4px;
+}
+
+select {
+    @extend %input;
+}
+
+::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+	height: auto;
+	cursor: pointer;
+}
+
+
+// 
+// Text inputs with SVG backgrounds 
+// 
+
+[type="text"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+}
+
+[type="email"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.email.svg);    
+}
+
+[type="password"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.password.svg);    
+}
+
+[type="search"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.search.svg);   
+	-webkit-appearance: textfield; 
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+}
+
+#author,
+[type="c-name"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.user.svg);  
+}
+
+[type="c-phone"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.phone.svg);  
+}
+
+[type="tel"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.phone.svg);  
+}
+
+[type="url"] {
+    @extend %input;
+    cursor: text;
+    padding: 0.15em;
+    // @extend %input-bg;    
+    // background-image: url(./assets/placeholders/ph.url.svg);   
+}
+
+
+textarea {
+    @extend %input;
+    cursor: text;
+    padding: 0.15rem;
+    width: 100%;
+    overflow: auto; 
+    resize: vertical; 
+    // @extend %input-bg;   
+    // background-image: url(./assets/placeholders/ph.textarea.svg); 
+    // background-position: 0.25em 0.2em ;
+}
+

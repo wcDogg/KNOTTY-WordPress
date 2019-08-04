@@ -1,0 +1,43 @@
+// 
+// Basic Section
+// 
+section.section {
+    .section__inner {}
+        .section__title {}
+        .section__subtitle {}
+        .section__content {}
+}
+
+// 
+// List Section
+// 
+
+.list {// grid
+    i {}
+    .list__item-text {}
+} 
+   
+.list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 1.4rem;
+
+    i { 
+        justify-self: center;
+        // magic number compensates for padding, line-height, etc.
+        margin-top: 0.3em; 
+    }
+
+} //
+
+.list__item-text {
+    > p:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    > p:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}

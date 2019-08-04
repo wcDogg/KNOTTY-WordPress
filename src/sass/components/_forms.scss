@@ -1,0 +1,127 @@
+// 
+// Ninja Forms
+// 
+
+
+// Move 'success message' to bottom of form
+.nf-form-wrap  {
+    display: grid;
+    grid-template-areas: 
+        'nf-debug'
+        'nf-before'
+        'nf-form'
+        'nf-response'
+        'nf-after';
+
+    // success message above fields  
+    .nf-response-msg  { grid-area: nf-response; }  
+    // debug message above fields
+    .nf-nf-debug-msg  { grid-area: nf-debug; }
+    // empty section above fields ???
+    .nf-before-form   { grid-area: nf-before; }
+    // form fields + submit
+    .nf-form-layout   { grid-area: nf-form; }
+    // generic 'correct errors' message + hidden-accessible inputs after fields
+    .nf-after-form    { grid-area: nf-after; } 
+}
+
+
+// Hide 'required fields` message at top of forms
+.nf-form-fields-required {
+    display: none;
+}
+
+// Hide generic 'correct errors' message at bottom of forms
+.nf-error-msg.nf-error-field-errors {
+    display: none;
+}
+
+// Success message
+.nf-response-msg {
+    color: $color__true;
+}
+
+// Error labels
+.nf-error {
+    @include font-size(0.79);
+    text-align: left;
+}
+
+
+// GDPR Checkbox layout
+.label-right .field-wrap {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 0.25em;
+    align-items: center;
+    align-content: center;
+    grid-template-areas: 
+        'cb cb-l'
+        '. cb-d';
+
+    .nf-field-element {
+        grid-area: cb;
+    }
+    .nf-field-label {
+        grid-area: cb-l;
+    }
+    .nf-field-description {
+        grid-area: cb-d;
+    }
+} //
+
+
+// Ninja Forms overrides
+.field-wrap > div input[type=checkbox] {
+    height: 1.4em;
+    width: 1.4em !important;
+}
+
+.label-right .checkbox-wrap .nf-field-element {
+    width: auto !important;
+} 
+
+// Styles
+.label-right .field-wrap {
+
+    .nf-field-label { 
+        padding-left: 0; 
+    }
+
+    .nf-field-description { 
+        @include font-size(0.79);
+        text-align: left;
+        margin: 0;
+    }
+
+} //
+
+
+
+// 
+// Contact Form
+// 
+
+#nf-form-1-cont nf-fields-wrap {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.5rem;
+    // margin-top: 1rem;
+    grid-template-areas: 
+        'cf-mess cf-mess'
+        'cf-fn cf-ln'
+        'cf-ea cf-ea'
+        'cf-cb cf-cb'
+        'cf-submit cf-submit'
+    ;
+
+    nf-field:nth-of-type(1) { grid-area: cf-mess; }
+    nf-field:nth-of-type(2) { grid-area: cf-fn; }
+    nf-field:nth-of-type(3) { grid-area: cf-ln; }
+    nf-field:nth-of-type(4) { grid-area: cf-ea; }
+    nf-field:nth-of-type(5) { grid-area: cf-cb; }
+    nf-field:nth-of-type(6) { grid-area: cf-submit; }
+
+}
+

@@ -1,0 +1,14 @@
+//
+// @file /sass/bits/_video.scss
+// 
+
+
+// video {
+// 	vertical-align: middle;
+// 	display: inline-block;
+// }
+
+video {
+    object-fit: cover;
+    width: 100%;
+}

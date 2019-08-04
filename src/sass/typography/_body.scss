@@ -1,0 +1,77 @@
+//
+// @file /sass/typogrphy/_body.scss
+//
+
+
+html {
+	cursor: default; 	
+	box-sizing: border-box;
+	font-size: $font-size;
+	-moz-tab-size: 4; 
+	tab-size: 4; 
+	-ms-text-size-adjust: 100%; 
+	-webkit-text-size-adjust: 100%; 
+	word-break: break-word; 
+
+	// Font Rendering
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	// added by theme + jQuery
+	&.ios {}
+	&.mobile {}
+	&.ie {}
+	&.chrome {}
+	&.firefox {}
+	&.safari {}
+	&.opera {}
+
+	// TODO: Load `smooth-scroll.js` for non -webkit
+	// Then conditionally use this property for -webkit 
+	// (FF, Chrome, Opera)
+	// scroll-behavior: smooth; 
+
+} //
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+  	background-repeat: no-repeat; 
+}
+
+::before,
+::after {
+  text-decoration: inherit; 
+  vertical-align: inherit; 
+}
+
+:root {
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+:focus{@include focus;}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	@include sans-400;
+	@include font-size;		
+	line-height: 1.602;	
+	color: $color__text;
+	background: $bg__body;
+}
+
+// body {
+// 	opacity: 1;
+// 	transition: 1000ms opacity;
+// }
+
+// body[data-body-fade]{
+// 		opacity: 0;
+// 		transition: none;
+// }
+

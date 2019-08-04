@@ -1,0 +1,35 @@
+//
+// Branding Classes 
+//
+
+
+h1.branding {
+	a.branding__link {}
+	span.branding__logo {}	
+		.svg
+	span.branding__text {}
+
+}
+
+.branding { 
+	line-height: 1;
+	@include condensed-700;
+	@include font-size(1.424);	
+	margin: 0;
+	padding: 0;	
+
+	&__link {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {}
+
+	&__logo svg {
+		height: 1.62em;
+		width: 1.62em;
+	}
+
+	&__text {}	
+
+} // 

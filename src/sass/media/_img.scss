@@ -1,0 +1,29 @@
+//
+// @this /sass/media/_img.scss
+// 
+
+ 
+img {
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 1;	
+	vertical-align: middle;
+}
+
+svg {
+	height: 100%;
+	width: 100%;
+}
+
+figure {
+	background-color: $color__primary;
+	figcaption {
+		margin: 0;
+		padding: 0.5rem;
+		@include condensed-400;
+		@include font-size(0.79);
+		color: $color__text;
+	}
+}

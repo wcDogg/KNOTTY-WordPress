@@ -1,0 +1,10 @@
+// 
+// This site is using Google reCaptcha V3
+// which runs on all pages - not just forms.
+// The badge is huge on mobile screens
+// so we've decided to hide it per
+// https://developers.google.com/recaptcha/docs/faq
+// 
+
+.grecaptcha-badge { visibility: hidden; }
+
