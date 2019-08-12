@@ -37,8 +37,10 @@
 			) ); ?>
 		</nav>
 
-		<?php get_template_part('parts/nav/nav', 'follow'); ?>
-		<?php get_template_part('parts/nav/nav', 'mobile'); ?>
+		<?php 
+			get_template_part('parts/nav/nav', 'follow'); 
+			get_template_part('parts/nav/nav', 'mobile'); 
+		?>
 
 	</header><!-- #header -->
 	

@@ -153,8 +153,6 @@ require get_template_directory() . '/inc/knotty-nav-menu.php';
 require get_template_directory() . '/inc/knotty-ga.php';
 require get_template_directory() . '/inc/knotty-relevanssi.php';
 
-
-
 // 
 // Shortcodes
 //

@@ -22,7 +22,9 @@ $location_04 = wp_get_nav_menu_name('menu-mobile-04');
 		<div data-modal data-modal-full>
 			<div data-modal-content>
 
-				<?php get_template_part('parts/nav/nav', 'follow'); ?>  
+				<?php 
+					get_template_part('parts/nav/nav', 'follow'); 
+				?>  
 
 				<div data-modal-grid>
 					<?php 
