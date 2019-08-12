@@ -11,7 +11,7 @@ $img_home = $upload_dir['baseurl'] . '/bg_home.jpg';
 $page_title = get_the_title();
 $page_subtitle = get_field('subtitle');
 $page_summary = get_field('summary'); 
-$page_date = knotty_posted_on();
+knotty_posted_on();
 $page_categories = the_category( '&nbsp;&bull;&nbsp;' );
 $page_tags = the_tags( '', '&nbsp;&bull;&nbsp;' );
 $page_permalink = get_the_permalink();

@@ -17,10 +17,10 @@
 function knotty_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'knotty_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
+		// 'default-text-color'     => '000000',
+		// 'width'                  => 1000,
+		// 'height'                 => 250,
+		// 'flex-height'            => true,
 		'wp-head-callback'       => 'knotty_header_style',
 	) ) );
 }
