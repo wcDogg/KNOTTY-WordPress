@@ -1,0 +1,180 @@
+@charset "UTF-8";
+// ---------------------------------------------
+// Section Backgrounds
+// ---------------------------------------------
+
+@mixin section-bg-ovals ($bg: #000000, $oval: $c__base-dk, $hlt: $c__base)  {
+
+	$size__oval: 68%; // variable
+	$size__hlt: 70%; // required
+
+	article section:nth-child(4n+1) {
+		// at right top    
+		background: 
+			radial-gradient(
+				at 100% 0%,
+				$oval $size__oval, 
+				transparent $size__oval, 
+			),		
+			radial-gradient(
+				at 100% 0%,
+				$hlt $size__hlt, 
+				transparent $size__hlt, 
+			),
+			$bg;
+	} //
+
+	article section:nth-child(4n+2) {
+		// at left bottom,
+		background: 
+			radial-gradient(			
+				at 0% 100%,
+				$oval $size__oval, 
+				transparent $size__oval, 
+			),
+			radial-gradient(
+				at 0% 100%,
+				$hlt $size__hlt, 
+				transparent $size__hlt, 
+			),		
+			$bg;
+	} //
+
+	article section:nth-child(4n+3) {
+		// at left top,
+		background:
+			radial-gradient(			
+				at 0% 0%,
+				$oval $size__oval, 
+				transparent $size__oval, 
+			),
+			radial-gradient(
+				at 0% 0%,
+				$hlt $size__hlt, 
+				transparent $size__hlt, 
+			),			
+			$bg;
+	} //
+
+	article section:nth-child(4n) {
+		// at right bottom,
+		background: 
+			radial-gradient(		
+				at 100% 100%,
+				$oval $size__oval, 
+				transparent $size__oval, 
+			),
+			radial-gradient(
+				at 100% 100%,
+				$hlt $size__hlt, 
+				transparent $size__hlt, 
+			),			
+			$bg;
+	} //
+
+} //
+
+
+@mixin section-bg-slash-h($dk: #000000, $lt: $c__base-dk) {
+
+	article section:nth-child(odd) {
+		background: linear-gradient(
+			170deg, 
+			$dk 50%, 
+			$lt 50%,)
+			$dk; 
+	}
+	article section:nth-child(even) {
+		background: linear-gradient(
+			10deg, 
+			$dk 50%, 
+			$lt 50%,)
+			$dk; 
+	}	
+
+} // 
+
+
+// https://codepen.io/jeremyfrank/pen/avyezR?editors=1100
+@mixin section-bg-angle($pseudo, $flip: false, $angle: 1.5deg) {
+	// Possible values for $pseudo are: before, after, both
+	@if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+
+		position: relative;
+		z-index: 1;
+		$selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+		#{$selector} {
+			background: inherit;
+			content: '';
+			display: block;
+			height: 50%;
+			left: 0;
+			position: absolute;
+			right: 0;
+			z-index: -1;
+			-webkit-backface-visibility: hidden; // for Chrome Windows
+		} //
+
+		@if $pseudo == 'before' {
+			#{$selector} {
+				top: 0;
+				@if $flip {
+					transform: skewY($angle * -1);
+					transform-origin: 0 0;
+				} @else {
+					transform: skewY($angle);
+					transform-origin: 100% 0;
+				}
+			}
+		} //
+
+		@if $pseudo == 'after' {
+			#{$selector} {
+				bottom: 0;
+				@if $flip {
+					transform: skewY($angle);
+					transform-origin: 0 100%;
+				} @else {
+					transform: skewY($angle * -1);
+					transform-origin: 100%;
+				}
+			}
+		} //
+
+		@if $pseudo == 'both' {
+			&:before {
+				top: 0;
+				@if $flip {
+					transform: skewY($angle * -1);
+					transform-origin: 0 0;
+				} @else {
+					transform: skewY($angle);
+					transform-origin: 100% 0;
+				}
+			} //
+
+			&:after {
+				bottom: 0;
+				@if $flip {
+					transform: skewY($angle);
+					transform-origin: 0 0;
+				} @else {
+					transform: skewY($angle * -1);
+					transform-origin: 100%;
+				}
+			}
+		} //
+
+	} // @if
+} // @mixin
+
+
+@mixin section-bg-subtle($color: $c__base-lt) {
+	background:
+		linear-gradient(
+			to right top,
+			#000000,
+			$color,
+		);
+} //

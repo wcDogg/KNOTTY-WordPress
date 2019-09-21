@@ -1,22 +1,19 @@
+@charset 'UTF-8';
 
 // Test mode - see /sass/globals/_theme-globals.scss
-@import "mix-test-mode";
+@import 'mix-test-mode';
 
 // Fonts
-@import "mix-font-size";
-@import "mix-font-sans";
-@import "mix-font-serif";
-@import "mix-font-mono";
-@import "mix-font-condensed";
+@import 'mix-font-size';
 
 // Accessibility
-@import "mix-hidden-accessible";
-@import "mix-screen-reader-text";
-@import "mix-focus";
+@import 'mix-hidden-accessible';
+@import 'mix-screen-reader-text';
+@import 'mix-focus';
 
 // Layout
-@import "mix-clearfix";
+@import 'mix-clearfix';
 
 // Backgrounds
-@import "mix-backgrounds";
+@import 'mix-section-bg';
 

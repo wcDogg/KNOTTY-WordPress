@@ -1,0 +1,90 @@
+@charset "UTF-8";
+// --------------------------------------------
+// Overlay.scss - Hover using Animate.scss
+// @requires /js/overlay.js
+// --------------------------------------------
+
+//---------------------------------------------
+// Hover Effect
+//---------------------------------------------
+a.overlay__link { 
+	div.overlay__wrap[data-overlay] {		
+		div.overlay__content {}	
+        div.overlay {}		
+		img.overlay__img {} 
+	} //
+	div.overlay__wrap.hover[data-overlay] {
+		div.overlay__content {}	
+        div.overlay {}				
+		img.overlay__img {} 
+	} //		
+} //
+
+
+//---------------------------------------------
+// Hover Effect - Required
+//---------------------------------------------
+.overlay__link {
+
+    display: grid;
+    overflow: hidden;
+
+    .overlay__wrap:not(.hover) {
+        z-index: 1;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .overlay__wrap.hover {
+        z-index: 0;
+        grid-column: 1/2;
+        grid-row: 1/2;    
+    }
+
+} // 
+
+
+//---------------------------------------------
+// Hover Effect - Default
+//---------------------------------------------
+.overlay__link {
+
+    .overlay__wrap { 
+        // min-height: 200px;
+    }
+    .overlay__wrap:not(.hover) {
+        // $corner = lt || lb || rt || rb || center
+        // @include overlay-solid(center, rgba(#000000, 0));
+        // @include overlay-wash(lb, $c__base-dk);
+        // @include overlay-corner-sharp(lb, rgba($c__base-dk, 1), rgba($c__base-dk, 0.2));
+        // @include overlay-corner-soft(lb, rgba($c__base-dk, 1));
+        // @include overlay-vignette(lb, rgba($c__base-dk, 1));
+        // @include overlay-football(lb, rgba($c__base-dk, 1));
+    }
+    .overlay__wrap.hover {
+        // $corner = lt || lb || rt || rb || center
+        // @include overlay-solid(center, rgba(#000000, 0.9));
+        // @include overlay-wash(lb, $c__base-dk);
+        // @include overlay-corner-sharp(lb, rgba($c__base-dk, 1), rgba($c__base-dk, 0.2));
+        // @include overlay-corner-soft(lb, rgba($c__base-dk, 1));
+        // @include overlay-vignette(lb, rgba($c__base-dk, 1));
+        // @include overlay-football(lb, rgba($c__base-dk, 1));      
+    }
+
+    [data-overlay] {
+        // @include animated(300ms);
+    }
+    [data-overlay="true"] {
+        // @extend %slideInDown;
+        // @extend %slideInLeft;
+        // @extend %slideInRight;
+        // @extend %slideInUp;        
+    }
+    [data-overlay="false"] {
+        // @extend %slideOutDown;
+        // @extend %slideOutRight;
+        // @extend %slideOutLeft;
+        // @extend %slideOutUp;        
+    }
+
+} // 
+

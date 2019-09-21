@@ -1,0 +1,52 @@
+// -------------------------------------------------
+// Add To Any
+// https://wordpress.org/plugins/add-to-any/
+// 
+// Currently matches `.nav--icons.secondary a`
+// -------------------------------------------------
+
+
+// Required stuff
+.addtoany_list a, 
+.widget .addtoany_list a {
+	line-height: 1 !important;
+	// magic number - make this 2x bigger than theme icons
+	font-size: 1.6em !important;	
+}
+
+.a2a_svg { 
+
+	width: 1em !important;
+	height: 1em !important;
+	line-height: 1 !important;
+    padding: 0.125em !important;
+    border-radius: $border-radius__icon !important;
+    border: $border__icon !important;    
+
+	path {
+		fill: currentColor !important;
+	}
+
+} //
+
+.addtoany_list a:hover img, 
+.addtoany_list a:hover span {
+    opacity: 1 !important;
+}
+
+
+// // Styles
+.a2a_svg { 
+    transition: all 500ms;
+	color: 	rgba(#ffffff, 0.85) !important;	
+	background: $c__base !important;
+
+}
+
+a:hover, a:active, a:focus {
+	.a2a_svg { 
+		color: #ffffff !important;		
+		background: $c__primary !important;
+	}
+}
+

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+// ----------------------------------------
+// @used by ./js/MobileMenu.js
+// Style CSS - make most edits here. 
+// ----------------------------------------
+
+
+// ----------------------------------------
+// Open + Close Buttons
+// @see /sass/bits/button.scss
+// @see /sass/after-bg.scss
+// ----------------------------------------
+
+#mobile-open,
+#mobile-close {
+    color: #FFFFFF;
+    &::after { background: $c__primary; }
+    padding: 0.3em;
+    border-color: transparent;
+}
+
+// ----------------------------------------
+//  Top + Bottom content
+// ----------------------------------------
+
+#mobile-content {
+    background: #000000;
+    h3, h4 {
+        margin: 0;
+        padding-top: $gap-big;
+    }
+    p {
+        @include font-size(small);
+        margin: 0 0 $gap-big 0;
+    }
+}
+
+
+
+
+// ----------------------------------------
+// Menu 
+// @see /sass/nav/nav.scss
+// ----------------------------------------
+
+ul#mobile-menu {
+    @extend %nav-text-vertical;
+    a {
+        @extend %a-menu; // +1 optional
+        // @extend %a-menu-primary;
+        // @extend %a-menu-secondary;
+        // @extend %a-menu-alt;
+        // @extend %a-menu-subtle;
+        // @extend %a-menu-bright;
+        @extend %a-menu-white;
+    }
+
+} //
+
+
+// ----------------------------------------
+// <a id="mobile-close-sr">
+// Match menu styles
+// ----------------------------------------
+a#mobile-close-sr {
+
+    @extend %a-menu; // +1 optional
+    // @extend %a-menu-primary;
+    // @extend %a-menu-secondary;
+    // @extend %a-menu-alt;
+    // @extend %a-menu-subtle;
+    // @extend %a-menu-bright;
+    @extend %a-menu-white;
+
+} //
+

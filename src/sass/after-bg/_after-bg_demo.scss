@@ -1,0 +1,344 @@
+// --------------------------------------
+// $globals for CodePen
+// --------------------------------------
+
+// $color-bg:      #000000;
+// $c__yellow: #FFAB00;
+// $c__orange: #FF3D00;
+// $c__pink:   #ff4081;
+// $c__red:    #D50000;
+// $c__purple: #6200EA;
+// $c__blue:   #2979FF;
+// $c__cyan:   #00E5FF;
+// $c__teal:   #1DE9B6;
+// $c__green:  #64DD17;
+
+
+
+// --------------------------------------
+// Base
+// --------------------------------------
+.after-test {
+	// turn on BG transitions for all test divs
+	@extend %after-bg;	
+	border: 0;
+} //
+
+// --------------------------------------
+// peek
+// --------------------------------------
+#peek .after-test {
+	// some default styles
+	height: 200px; 
+	width:200px; 
+	// start 
+	background: $c__purple;
+	transition: 
+		transform 2500ms ease-out, 
+		color 300ms linear;	
+	// hover 
+	&::after {
+		transition: transform 300ms ease-in;
+		background: $c__green; 
+	}
+} //
+
+#peek-l {
+	@extend %after-peek-l;
+	border-radius:  0 100% 100% 0;	
+	&::after {
+		border-radius: 0 100% 100% 0;		
+	}
+}
+#peek-t {
+	@extend %after-peek-t;
+	border-radius: 0 0 100% 100%;	
+	&::after {
+		border-radius: 0 0 100% 100%;		
+	}	
+}
+#peek-r {
+	@extend %after-peek-r;
+	border-radius: 100% 0 0 100%;	
+	&::after {
+		border-radius: 100% 0 0 100%;		
+	}	
+}
+#peek-b {
+	@extend %after-peek-b;
+	border-radius: 100% 100% 0 0;	
+	&::after {
+		border-radius: 100% 100% 0 0;		
+	}	
+}
+
+// --------------------------------------
+// swipe
+// --------------------------------------
+#swipe .after-test {
+	// start 
+	background: $c__cyan;
+	color: black;	
+	transition: 
+		transform 2500ms ease-out, 
+		color 250ms linear;	
+	// hover
+	&::after {
+		transition: transform 300ms ease-in;	
+		background: $c__blue;  
+	}	
+	&:hover {
+		color: #ffffff;
+	}
+} //
+
+#swipe-l-r {
+	@extend %after-swipe-l-r;	
+	height: 100px; 
+	width: 230px; 
+	grid-column: 1/3;
+	grid-row: 1/2;
+}
+#swipe-t-b {
+	@extend %after-swipe-t-b;	
+	height: 230px; 
+	width: 100px; 
+	grid-column: 3/4;
+	grid-row: 1/3
+}
+#swipe-r-l {
+	@extend %after-swipe-r-l;	
+	height: 100px; 
+	width: 230px; 
+	grid-column: 2/4;
+	grid-row: 3/4;
+}
+#swipe-b-t {
+	@extend %after-swipe-b-t;	
+	height: 230px; 
+	width: 100px; 
+	grid-column: 1/2;
+	grid-row: 2/4;
+}
+
+// --------------------------------------
+// wink-out - works in reverse
+// --------------------------------------
+#wink-out .after-test {
+	// defaults 
+	text-align: center;
+	color: #ffffff;
+	// hover
+	background: #212121;
+	transition: 
+		transform 100ms ease-in;	
+	// start
+	&::after {
+		transition: transform 100ms ease-out;	
+		background: $c__yellow;              
+	}	
+} //
+
+#wink-out-c {
+	@extend %after-wink-out-c;
+	border-radius: 100%;
+	&::after {
+		border-radius: 100%;             
+	}	
+	height: 200px;
+	width: 200px;	
+	grid-row: 1/4;
+	grid-column: 2/5;
+}
+#wink-out-x {
+	@extend %after-wink-out-x;	
+	border-radius: 100%;
+	&::after {
+		border-radius: 100%;             
+	}	
+	height: 100%;
+	width: 64px;	
+	grid-row: 1/5;
+	grid-column: 1/2;
+}
+#wink-out-y {
+	@extend %after-wink-out-y;	
+	border-radius: 100%;
+	&::after {
+		border-radius: 100%;             
+	}	
+	height: 64px;
+	min-width: 200px;	
+	grid-row: 4/5;
+	grid-column: 2/5;
+}
+
+// --------------------------------------
+// wink-in
+// --------------------------------------
+#wink-in .after-test {
+	background: #212121;
+	color: #ffffff;
+	text-align: center;		
+	transition: 
+		transform 100ms ease-in;	
+	&::after {
+		transition: transform 100ms ease-out;	
+		background: $c__yellow; 
+	}
+
+} //
+
+#wink-in-c {
+	@extend %after-wink-in-c;
+	border-radius: 100%;
+	&::after {
+		border-radius: 100%;             
+	}	
+	height: 200px;
+	width: 200px;	
+	grid-row: 1/4;
+	grid-column: 2/5;
+}
+#wink-in-x {
+	@extend %after-wink-in-x;	
+	border-radius: 100%;
+	&::after {
+		border-radius: 100%;             
+	}	
+	height: 100%;
+	width: 64px;	
+	grid-row: 1/5;
+	grid-column: 1/2;
+}
+#wink-in-y {
+	@extend %after-wink-in-y;	
+	border-radius: 100%;
+	&::after {
+		border-radius: 100%;             
+	}	
+	height: 64px;
+	min-width: 200px;	
+	grid-row: 4/5;
+	grid-column: 2/5;
+}
+
+// --------------------------------------
+// corner-in
+// --------------------------------------
+#corner-in .after-test {
+	// defaults 
+	text-align: center;	
+	height: 160px;
+	width: 160px;	
+	// start
+	color: #000000;
+	background: $c__green;
+	transition: 
+		transform 300ms ease-out, 
+		color 500ms linear;	
+	// hover
+	&::after {
+		transition: transform 300ms ease-in;	
+		background: $c__blue; 
+	}
+	&:hover {
+		color: #ffffff;
+	}
+} //
+
+#corner-in-lt {
+	@extend %after-corner-in-lt;
+}
+#corner-in-rt {
+	@extend %after-corner-in-rt;
+}
+#corner-in-lb {
+	@extend %after-corner-in-lb;
+}
+#corner-in-rb {
+	@extend %after-corner-in-rb;
+}
+
+// --------------------------------------
+// corner-in - works in reverse
+// --------------------------------------
+#corner-out .after-test {
+	// defaults 
+	text-align: center;	
+	height: 160px;
+	width: 160px;	
+	// start
+	color: #ffffff; 
+	transition: 
+		transform 300ms ease-in, 
+		color 500ms linear;	
+	&::after {
+		transition: transform 300ms ease-out;	
+		background: $c__blue; 
+	}
+	// hover	
+	background: $c__green; // hover
+	&:hover { 
+		color: #000000;
+	}
+} //
+
+#corner-out-lt {
+	@extend %after-corner-out-lt;
+}
+#corner-out-rt {
+	@extend %after-corner-out-rt;
+}
+#corner-out-lb {
+	@extend %after-corner-out-lb;
+}
+#corner-out-rb {
+	@extend %after-corner-out-rb;
+}
+
+
+
+// --------------------------------------
+// Demo Grids
+// --------------------------------------
+
+.after-test {
+	margin: auto;
+	padding: 0.5rem;
+}
+
+#peek,
+#corner-in,
+#corner-out {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-columns: auto auto;
+	grid-gap: 1rem;
+	justify-content: center;
+}
+
+#swipe {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto auto;
+	justify-content: center;
+}
+
+#wink-out,
+#wink-in {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: auto auto auto auto;
+	grid-gap: 20px;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+// --------------------------------------
+// CodePen
+// --------------------------------------
+
+
+

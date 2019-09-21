@@ -1,8 +1,9 @@
-//
-// @this /sass/media/_img.scss
-// 
+@charset "UTF-8";
 
- 
+// --------------------------------------------------
+// Image
+// --------------------------------------------------
+
 img {
 	max-width: 100%;
 	margin: 0;
@@ -18,12 +19,14 @@ svg {
 }
 
 figure {
-	background-color: $color__primary;
+	background-color: $c__base;
+	border: $border__content;
+	border-radius: $border-radius__content;
 	figcaption {
 		margin: 0;
 		padding: 0.5rem;
-		@include condensed-400;
-		@include font-size(0.79);
-		color: $color__text;
+		@include font-size(small);
+		color: $c__text;
 	}
 }
+

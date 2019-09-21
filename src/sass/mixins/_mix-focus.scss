@@ -1,11 +1,15 @@
-// 
-// @this /sass/mixins/_mix-focus.scss
-//
-// This theme's global focus style for links, buttons, inputs, etc.
-// 
+@charset "UTF-8";
+// --------------------------------------------
+// Global Focus
+// --------------------------------------------
 
-
-@mixin focus {
-		outline: 4px dashed $color__focus;
+@mixin focus  ($color: $c__focus) {
+	outline: none;
+	box-shadow: 0px 0px 6px 0px rgba($c__focus, 1);
 }
- 
+
+@mixin focus-big  ($color: $c__focus) {
+	outline: none;
+	box-shadow: 0px 0px 12px 0px rgba($c__focus, 1);
+}
+

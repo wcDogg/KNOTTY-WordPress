@@ -1,4 +1,12 @@
-<?php
+ <?php
+/**
+ * front-page.php
+ * 
+ * 
+ * @package knotty
+ * @since Knotty 1.0
+ */
+
 
  // Protect against arbitrary paged values
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
@@ -22,40 +30,60 @@ $args = array(
 // Must be $query for navigation to work
 $custom_query = new WP_Query( $args );
 
+?>
 
-get_header();
 
-echo '<article id="post-'.esc_attr( get_the_ID() ).'>" class="home landing">';
+<?php get_header(); ?>
 
-	get_template_part('parts/headers/header', get_post_type() );
+<article class="home">
+
+    <section class="section header header--home">
+
+        <div class="overlay__wrap">
+
+            <div class="overlay"></div>
+
+            <div class="header__title-wrap overlay__content">
+                <h1 class="header__title">knotty.earth</h1>
+                <h2 class="header__subtitle">diversified geekdom</h2>
+            </div>     
+            
+        </div><!-- .overlay__wrap -->
 	
-    if ( $custom_query->have_posts() ) : 
+		<div class="header__inner">
+			<?php get_template_part('parts/archive/part', 'filters'); ?>
+		</div><!-- .header__inner -->
 		
-		echo '<section class="section section--cards facetwp-template">';	
-			echo '<div class="section__inner">';
-			                
-				echo '<div class="section__grid">';	
+    </section><!-- .header -->
+    
+    <?php  if ( $custom_query->have_posts() ) :  ?>
 
-					while ( $custom_query->have_posts() ) : 
+		<section class="section cards cards--multi facetwp-template">	
+			<div class="section__inner">				
+				<div class="section__cards ">
 
+					<?php while ( $custom_query->have_posts() ) : 
 						$custom_query->the_post(); 
-						get_template_part( 'parts/card', get_post_type() );
-											
-					endwhile;
+						get_template_part( 'parts/card/card', get_post_type() );
+					endwhile; ?>
+                    
+				</div><!-- .section__cards -->
 
-                echo '</div><!-- .section__grid -->';
-                
-                echo '<button class="button fwp-load-more">Show More</button>';
-
-			echo '</div><!-- .section__inner -->';
-		echo '</section><!-- .section -->';	
+				<button class="button fwp-load-more">Show More</button>
+				
+			</div><!-- .section__inner -->
+		</section><!-- .section -->
 		
-	else :
-		get_template_part( 'parts/content', 'none' );
-	endif;
+	<?php 
 
-	wp_reset_query();
+		else :
+			get_template_part( 'parts/section/section', 'none' );
+		endif;
+		
+		wp_reset_query();
 
-echo '</article><!-- #post-'.esc_html( get_the_ID() ).' -->';
+	?>
 
-get_footer();
+</article><!-- #index  -->
+
+<?php get_footer(); ?>

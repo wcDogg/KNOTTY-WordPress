@@ -1,0 +1,36 @@
+@charset "UTF-8";
+// --------------------------------------------
+// Branding 
+// --------------------------------------------
+
+a.branding {
+	div.branding__img {}
+		img {}
+		svg {}
+	h1.branding__title {}		
+}
+
+
+.branding { 
+	h1 { 
+		@include font-size(1.125);
+		line-height: 1;
+		padding: $gap-small;
+		padding-top: 4px;
+	}
+	svg {
+		height: 1.62em;
+		width: 1.62em;
+	}
+} // 
+
+a.branding {
+	@extend %a-menu; // +1 optional
+	// @extend %a-menu-primary;
+	// @extend %a-menu-secondary;
+	// @extend %a-menu-alt;
+	// @extend %a-menu-subtle;
+	// @extend %a-menu-bright;
+	@extend %a-menu-white;
+} // 
+

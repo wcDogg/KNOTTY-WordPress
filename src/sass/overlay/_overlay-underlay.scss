@@ -1,0 +1,165 @@
+@charset "UTF-8";
+// ---------------------------------------------------
+// Overlay.scss - Title underlays
+// for when you don't have an image, but
+// you need some dtetail.
+// 
+// https://codepen.io/ljburton/pen/pozWWKK?editors=0100
+// 
+// ---------------------------------------------------
+
+
+// $slihn = left || center || right
+// @include title-under-simple(center, rgba($c__base-bright, 1));
+// @include title-under-spotlight(center, rgba($c__base-bright, 1));
+// @include title-under-thumbtack(center, rgba($c__base-bright, 1));
+// @include title-under-nights(right, rgba($c__base-bright, 1));
+// @include title-under-oval(center, rgba($c__base-bright, 1));
+// @include title-under-slant(center, rgba($c__base-bright, 0.5));
+
+
+// ----------------------------------------------
+// @include title-under-simple;
+// ----------------------------------------------
+@mixin title-under-simple($align: center, $color: rgba($c__base-bright, 1) ) {
+	.overlay {
+		grid-column: 2/3;
+		grid-row: 2/3;		
+		background-color: $color;
+	}
+	.overlay__content {
+		padding: $gap-big $gap-base;
+		text-align: $align;
+	}
+} //	
+
+
+// ----------------------------------------------
+// @include title-under-spotlight;
+// ----------------------------------------------
+@mixin title-under-spotlight($align: left, $color: rgba($c__base-bright, 1) ) {
+	.overlay {
+		grid-column: 2/3;
+		grid-row: 2/3;
+		min-height: 144px;
+				
+		background-image: radial-gradient(
+			circle,
+			$color 72px,		
+			transparent 72px); //	
+	}
+	.overlay__content {
+		padding-top: 36px;
+		padding-bottom: 36px;
+		text-align: $align;
+	}
+} //	
+
+
+// ----------------------------------------------
+// @include title-under-thumbtack;
+// ----------------------------------------------
+@mixin title-under-thumbtack($align: center, $color: $c__base-bright) {
+	.overlay {
+		grid-column: 2/3;
+		grid-row: 2/3;
+		margin: -10px;
+		background-image: 
+			// left top
+			radial-gradient(
+				circle at 11px 11px,
+				rgba($color, 0.3) 10px,
+				transparent 10px),
+			// right top 
+			radial-gradient(
+				circle at calc(100% - 11px) 11px,
+				rgba($color, 0.7) 10px,
+				transparent 10px),	
+			// right bottom 
+			radial-gradient(
+				circle at calc(100% - 11px) calc(100% - 11px),
+				rgba($color, 0.5) 10px,
+				transparent 10px),		
+			// left bottom
+			radial-gradient(
+				circle at 11px calc(100% - 11px),
+				rgba($color, 0.8) 10px,
+				transparent 10px);
+	} //
+	.overlay__content {
+		background: rgba($color, 0.2);
+		padding: 12px 20px; 
+		text-align: $align;
+	}
+} //
+
+
+// ------------------------------------------------
+// @include title-under-nights;
+// ------------------------------------------------
+@mixin title-under-nights($align: right, $sliver: rgba($c__base-bright, 1), $circle: rgba(#000000, 0.7) ) {
+	.overlay {
+		grid-column: 2/3;
+		grid-row: 2/3;
+		min-height: 144px;		
+		background-image: 
+			radial-gradient(
+				circle at calc(50% + 12px) calc(50% + 4px),
+				$circle 60px,
+				transparent 60px),
+			radial-gradient(
+				circle,
+				$sliver 72px,
+				transparent 72px) ; // 
+	}
+	.overlay__content {
+		padding-top: 36px;
+		padding-bottom: 36px;
+		text-align: $align;
+	}
+
+} //
+
+
+// -------------------------------------------------
+// @include title-under-oval
+// -------------------------------------------------
+@mixin title-under-oval($align: center, $color: rgba($c__base-bright, 1) ) {
+	.overlay {
+		grid-column: 2/3;
+		grid-row: 2/3;
+		transform: rotate(15deg);
+		background: radial-gradient(
+			at 50% 50%, 
+			$color 58%, 
+			transparent 58%), 
+			transparent;
+	}
+	.overlay__content {
+        padding: 0.5rem;
+        text-align: $align;
+	}
+} // 
+
+
+// --------------------------------------------------
+// @include title-under-slant
+// --------------------------------------------------
+@mixin title-under-slant($align: center, $color: rgba($c__base-bright, 0.5) ) {
+	.overlay {	
+		grid-column: 2/3;
+		grid-row: 2/3;		
+		background-image: linear-gradient(
+			30deg,
+			transparent,
+			transparent 25%,
+			$color 25%,
+            $color 75%,
+            transparent 75%) ;//		
+	}
+	.overlay__content {
+		padding: $gap-base 0;
+		text-align: $align;
+	}
+} // 
+

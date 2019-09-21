@@ -1,0 +1,354 @@
+@charset "UTF-8";
+// -------------------------------------------------------
+// ::after background-color Transitions
+// Lisa Burton - https://github.com/wcDogg
+// -------------------------------------------------------
+
+// --------------------------------------
+// Turn on BG transtions
+// --------------------------------------
+%after-bg {
+	// start required
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	// after required 
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;		
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+	}	
+}
+
+// --------------------------------------
+// peek-from
+// --------------------------------------
+%after-peek-l {
+	// start transtion 
+	&::after {
+		transform: scalex(0);
+		transform-origin: left;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scalex(1);
+		transform-origin: left;
+	}			
+}
+
+%after-peek-r {
+	// start transtion 
+	&::after {
+		transform: scalex(0);
+		transform-origin: right;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scalex(1);
+		transform-origin: right;
+	}			
+}
+
+%after-peek-t {
+	// start transtion 
+	&::after {
+		transform: scaley(0);
+		transform-origin: top;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scaley(1);
+		transform-origin: top;
+	}			
+}
+
+%after-peek-b {
+	// start transtion 
+	&::after {
+		transform: scaley(0);
+		transform-origin: bottom;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scaley(1);
+		transform-origin: bottom;
+	}			
+}
+
+// --------------------------------------
+// swipe-from-too
+// --------------------------------------
+%after-swipe-l-r {
+	// start transtion 
+	&::after {
+		transform: scalex(0);
+		transform-origin: right;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scalex(1);
+		transform-origin: left;
+	}			
+}
+
+%after-swipe-r-l {
+	// start transtion 
+	&::after {
+		transform: scalex(0);
+		transform-origin: left;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scalex(1);
+		transform-origin: right;
+	}			
+}
+
+%after-swipe-t-b {
+	// start transtion 
+	&::after {
+		transform: scaley(0);
+		transform-origin: bottom;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scaley(1);
+		transform-origin: top;
+	}			
+}
+
+%after-swipe-b-t {
+	// start transtion 
+	&::after {
+		transform: scaley(0);
+		transform-origin: top;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scaley(1);
+		transform-origin: bottom;
+	}			
+}
+
+// --------------------------------------
+// wink-in-from
+// --------------------------------------
+%after-wink-in-c {
+	// start transtion 
+	&::after {
+		transform: scale(0);
+		transform-origin: center;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(1);
+		transform-origin: center;
+	}			
+}
+
+%after-wink-in-x {
+	// start transtion 
+	&::after {
+		transform: scalex(0);
+		transform-origin: center;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scalex(1);
+		transform-origin: center;
+	}			
+}
+
+%after-wink-in-y {
+	// start transtion 
+	&::after {
+		transform: scaley(0);
+		transform-origin: center;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scaley(1);
+		transform-origin: center;
+	}			
+}
+
+
+// --------------------------------------
+// wink-out-from (reversed)
+// --------------------------------------
+%after-wink-out-c {
+	// start transtion 
+	&::after {
+		transform: scale(1);
+		transform-origin: center;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(0);
+		transform-origin: center;
+	}			
+}
+
+%after-wink-out-x {
+	// start transtion 
+	&::after {
+		transform: scalex(1);
+		transform-origin: center;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scalex(0);
+		transform-origin: center;
+	}			
+}
+
+%after-wink-out-y {
+	// start transtion 
+	&::after {
+		transform: scaley(1);
+		transform-origin: center;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scaley(0);
+		transform-origin: center;
+	}			
+}
+
+// --------------------------------------
+// corner-in-from
+// --------------------------------------
+%after-corner-in-lt {
+	// start transtion 
+	&::after {
+		transform: scale(0);
+		transform-origin: left top;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(1);
+		transform-origin: left top;
+	}			
+}
+
+%after-corner-in-rt {
+	// start transtion 
+	&::after {
+		transform: scale(0);
+		transform-origin: right top;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(1);
+		transform-origin: right top;
+	}				
+}
+
+%after-corner-in-rb {
+	// start transtion 
+	&::after {
+		transform: scale(0);
+		transform-origin: right bottom;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(1);
+		transform-origin: right bottom;
+	}			
+}
+
+%after-corner-in-lb {
+	// start transtion 
+	&::after {
+		transform: scale(0);
+		transform-origin: left bottom;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(1);
+		transform-origin: left bottom;
+	}				
+}
+
+// --------------------------------------
+// courner-out-from (reversed)
+// --------------------------------------
+%after-corner-out-lt {
+	// start transtion 
+	&::after {
+		transform: scale(1);
+		transform-origin: left top;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(0);
+		transform-origin: left top;
+	}			
+}
+
+%after-corner-out-rt {
+	// start transtion 
+	&::after {
+		transform: scale(1);
+		transform-origin: right top;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(0);
+		transform-origin: right top;
+	}				
+}
+
+%after-corner-out-rb {
+	// start transtion 
+	&::after {
+		transform: scale(1);
+		transform-origin: right bottom;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(0);
+		transform-origin: right bottom;
+	}			
+}
+
+%after-corner-out-lb {
+	// start transtion 
+	&::after {
+		transform: scale(1);
+		transform-origin: left bottom;
+	}
+	// hover transtion	
+	&:hover::after,
+	&:active::after {
+		transform: scale(0);
+		transform-origin: left bottom;
+	}				
+}
+

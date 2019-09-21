@@ -1,16 +1,7 @@
-//
-// @file /sass/mixins/_mix-font-size.scss
-
-
-
-//
-// Default Sass rounding is to 5 decimal places. 
-// The baked-in `round();` function rounds to the whole number - good for px
-// This custom `roundDecimal()` lets you round to 1, 2, 3, or 4 decimal places -
-// used to limit rem to 2 decimal places.
-//
+// -----------------------------------------------------------------------------
+// Rounding Function
 // roundDecimal($this-number, 2);
-//
+// -----------------------------------------------------------------------------
 
 @function pow($x, $n) {
 	$ret: 1;
@@ -37,22 +28,21 @@
 	@return round($float * $pow) / $pow;
 }
 
-//
-// Function to calculate font-size pixel fallback
-// Uses the standard `round();` function
-// because pixels work best as whole numbers.
-//
+// ------------------------------------------------------
+// Pixel Calcualtion Function 
+// Uses the baked-in `round();` function
+// ------------------------------------------------------
 
 @function calculateFontPixel($font-multiplier) {
 	$pixelSize: round($font-size * $font-multiplier);
 	@return $pixelSize;
 }
 
-//
-// Function to calculate font-size rem
+// -------------------------------------------------------
+// REM Calculation Function
 // Uses custom `roundDecimal();` function
 // to limit rem to 2 decimal places. 
-//
+// -------------------------------------------------------
 
 @function calculateFontRem($font-multiplier) {
 	$pixelSize: $font-size * $font-multiplier;
@@ -61,33 +51,46 @@
 	@return $remSize * 1rem;
 }
 
-//
+// -------------------------------------------------------
 // The final mixin
-//
+// -------------------------------------------------------
 
 @mixin font-size($font-multiplier:1) {
-	font-size: calculateFontPixel($font-multiplier);
-	font-size: calculateFontRem($font-multiplier);
-}
-
-
-//
-// Usage
-// 
-
-// For rem and proportional rules to work, 
-// set $font-size in '_golbals-theme'
-// and use on 'html' (root).
-
-// html { font-size: $font-size; }
-
-// Then use @mixin to set 'body' to 1rem with px fallback.
-
-// body { @include font-size; }
-
-// Tnen use @mixin to set overrides as a ratio.
-
-// h1 { @include font-size(1.62); }
-// h2 { @include font-size(1.3); }
-// h3 { @include font-size(1.15); }
+	@if $font-multiplier == 'small' {
+		font-size: calculateFontPixel($font-size__small);
+		font-size: calculateFontRem($font-size__small);
+	} 
+	@else if $font-multiplier == 'big' {
+		font-size: calculateFontPixel($font-size__big);
+		font-size: calculateFontRem($font-size__big);	
+	}
+	@else if $font-multiplier == 'h1' {
+		font-size: calculateFontPixel($font-size__h1);
+		font-size: calculateFontRem($font-size__h1);	
+	}
+	@else if $font-multiplier == 'h2' {
+		font-size: calculateFontPixel($font-size__h2);
+		font-size: calculateFontRem($font-size__h2);	
+	}
+	@else if $font-multiplier == 'h3' {
+		font-size: calculateFontPixel($font-size__h3);
+		font-size: calculateFontRem($font-size__h3);	
+	}
+	@else if $font-multiplier == 'h4' {
+		font-size: calculateFontPixel($font-size__h4);
+		font-size: calculateFontRem($font-size__h4);	
+	}
+	@else if $font-multiplier == 'h5' {
+		font-size: calculateFontPixel($font-size__h5);
+		font-size: calculateFontRem($font-size__h5);	
+	}
+	@else if $font-multiplier == 'h6' {
+		font-size: calculateFontPixel($font-size__h6);
+		font-size: calculateFontRem($font-size__h6);	
+	}
+	@else {
+		font-size: calculateFontPixel($font-multiplier);
+		font-size: calculateFontRem($font-multiplier);		
+	}
+} //
 

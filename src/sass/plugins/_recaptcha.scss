@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// --------------------------------------------------
+// Google reCaptcha
+// --------------------------------------------------
+
+// 
+// This site is using Google reCaptcha V3
+// which runs on all pages - not just forms.
+// The badge is huge on mobile screens
+// so it's been hidden per: 
+// https://developers.google.com/recaptcha/docs/faq
+// 
+
+.grecaptcha-badge { visibility: hidden; }
+

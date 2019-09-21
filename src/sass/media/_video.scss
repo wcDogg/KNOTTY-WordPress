@@ -1,14 +1,16 @@
-//
-// @file /sass/bits/_video.scss
-// 
+@charset "UTF-8";
 
+// --------------------------------------------------
+// Video
+// --------------------------------------------------
+
+video {
+    object-fit: cover;
+    width: 100%;
+}
 
 // video {
 // 	vertical-align: middle;
 // 	display: inline-block;
 // }
 
-video {
-    object-fit: cover;
-    width: 100%;
-}

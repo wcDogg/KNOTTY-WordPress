@@ -1,44 +1,32 @@
-// 
-// Meta Classes
-// 
-div.meta {}
-span.meta {}
+@charset "UTF-8";
+// ---------------------------------------
+// Meta
+// styles match .attribute
+// ---------------------------------------
+%meta, 
 .meta {
-    i {}
-    span.meta__value {}
-}
+	white-space: nowrap; 
+	padding: 4px;
+	@include font-size(small);
 
+	i { 
+		@include font-size; 
+	}  
 
-// 
-// Meta Base
-// 
-.meta {
-    @include condensed-400;
-    @extend %small;
-    line-height: 1;
-    
-    i {}
-    .meta__value {}
-
+	.meta__value {}
+	
 } //
 
+%a-meta,
+a.meta,
+.meta a {
 
-div.meta {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-gap: 0.5em;
-    padding: 0.5rem 0.25rem;
+	@extend %a-color; // +1 optional
+	// @extend %a-color-primary;
+	// @extend %a-color-secondary;
+	// @extend %a-color-alt;
+	// @extend %a-color-bright;
+	// @extend %a-color-subtle;
+	 
 } //
-
-
-span.meta {
-    i {
-        margin-right: 0.25em;
-    }
-} // 
-
-
-// 
-// Meta One-Offs
-// 
 

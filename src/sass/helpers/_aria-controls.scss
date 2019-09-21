@@ -1,11 +1,8 @@
-//
-// @file /sass/helpers/_aria-controls.scss
-//
+@charset "UTF-8";
 
-
-/** 
- * Aria Controls 
- * ======================================== */
+// ------------------------------------------
+// Aria Controls
+// ------------------------------------------
 
 [aria-busy="true"] {
   cursor: progress;
@@ -18,11 +15,5 @@
 [aria-disabled="true"],
 [disabled] {
   cursor: not-allowed;
-}
-
-[aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
-  display: inherit;
-  position: absolute;
 }
 

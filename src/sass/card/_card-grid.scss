@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+// ------------------------------------------------------
+//  Card Grids 
+// ------------------------------------------------------
+
+.section.cards {
+    padding: $gap-extra $gap-base;
+    .section__inner {
+        width: 100%;
+    }
+    .section__title-wrap {
+        padding-bottom: $gap-extra;
+    }
+}
+
+.section__cards {
+    display: grid;
+    grid-row-gap: $gap-extra;
+}
+
+// ------------------------------------------------------
+// .cards--multi .section__cards
+// ------------------------------------------------------
+ .cards--multi .section__cards {
+    grid-template-columns: 1fr;
+    max-width: $width-base;
+    grid-column-gap: $gap-base;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+//  .cards--multi .section__cards {
+//     grid-template-columns: repeat(auto-fill, minmax(420px, 1fr) ) ;
+//     grid-column-gap: $gap-base;
+//  }
+
+
+// ------------------------------------------------------
+//  .cards--tax .section__cards
+// ------------------------------------------------------
+ .cards--tax .section__cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) ) ;
+    grid-column-gap: $gap-extra;
+ }
+
+
+// ------------------------------------------------------
+//  .cards--brands .section__cards
+// ------------------------------------------------------
+ .cards--brands .section__cards {
+    grid-template-columns: repeat(auto-fill, 192px ) ;
+    grid-column-gap: $gap-extra;
+
+ }
+

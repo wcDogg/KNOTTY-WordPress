@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-Theme Name: knottySexy
+Theme Name: Knotty
 Theme URI: http://underscores.me/
 Author: Lisa Burton
 Author URI: https://knotty.sexy
@@ -23,9 +23,19 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "mixins/import";
 @import "helpers/import";
 @import "typography/import";
-@import "layouts/import";
-@import "bits/import";
+@import "animate/import";
+@import 'overlay/import';
+@import 'after-bg/import';
+
+
+@import "site/import";
 @import "nav/import";
+@import "sections/import";
+@import "bits/import";
 @import "media/import";
-@import "components/import";
-@import "individual/import.scss";
+@import "card/import";
+
+@import 'plugins/import';
+@import "MobileMenu/import";
+
+@import 'one-off/import';

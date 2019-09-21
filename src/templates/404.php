@@ -1,26 +1,30 @@
 <?php
+/**
+ * 404.php
+ * Displays 'page not found'
+ * 
+ * @package knotty
+ * @since Knotty 1.0
+ */
+?>
 
-get_header();
 
-echo '<article class="error-404">';
+<?php get_header(); ?>
 
-	echo '<section class="section section--header">';
-		echo '<div class="section__inner">';
-		
-			echo '<div class="page__title-grid">';
-				echo '<div class="page__title-wrap">';
-					echo '<h1 class="page__title">404</h1>';
-					echo '<h2 class="page__subtitle">Oops! Page Not Found.</h2>';				
-				echo '</div><!-- .page__title-wrap -->';
-			echo '</div><!-- .page__title-grid -->';
+<article class="error-404">
 
-			echo '<p class="big">It\'s probably our fault - we recently renovated and are still cleaning up. How about searching?</p>';
-			// form.search-form
-			get_search_form();	
-			
-		echo '</div><!-- .section__innter -->';
-	echo '</section><!-- .section--header -->';
+    <section class="section header header--archive">
+        <div class="overlay__wrap">
+            <div class="header__title-wrap overlay__content">
+                <h1 class="header__title">404</h1>
+                <h2 class="header__subtitle">Oops! Page Not Found</h2>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </section><!-- .header -->
 
-echo '</article><!-- #post-'.esc_html( get_the_ID() ).' -->';
+    <?php get_template_part('parts/section/section', 'none'); ?>
 
-get_footer();
+</article><!-- .error-404 -->
+
+<?php get_footer(); ?>

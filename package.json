@@ -1,22 +1,20 @@
 {
-  "name": "knotty-wordpress",
+  "name": "knotty-projects",
   "version": "1.0.0",
-  "description": "A custom WordPress theme for knotty.earth",
+  "description": "knotty Project Parts",
   "main": "index.js",
   "scripts": {
     "build-task:destroy-dist": "del-cli knotty",
     "build-task:make-dist": "make-dir knotty",
     "build-task:copy-templates": "cpy \"**/*.*\" \"../../knotty\" --cwd=src/templates",
-    "build-task:copy-includes": "cpy \"**/*.*\" \"../../knotty/inc\" --cwd=src/inc",
-    "build-task:copy-languages": "cpy \"**/*.*\" \"../../knotty/languages\" --cwd=src/languages",
+    "build-task:copy-inc": "cpy \"**/*.*\" \"../../knotty/inc\" --cwd=src/inc --parents",
     "build-task:copy-parts": "cpy \"**/*.*\" \"../../knotty/parts\" --cwd=src/parts --parents",
-    "build-task:style": "node-sass --output-style compressed src/sass/style.scss knotty/style.css",
-    "build-task:styleAuto": "postcss knotty/style.css -u autoprefixer -r",
-    "build-task:rtl": "node-sass --output-style compressed src/sass/rtl.scss knotty/rtl.css",
-    "build-task:rtlAuto": "postcss knotty/rtl.css -u autoprefixer -r",
-    "build-task:sass": "node-sass --output-style compressed src/sass/*/ -o knotty/css/*",
-    "build-task:sassAuto": "postcss knotty/css -u autoprefixer -r",
-    "build-task:babel": "babel src/js -d knotty/js",
+    "build-task:copy-images": "cpy \"**/*.*\" \"../../knotty/images\" --cwd=src/images",
+    "build-task:copy-demo": "cpy \"**/*.*\" \"../../knotty/demo\" --cwd=src/demo",
+    "build-task:css-style": " node-sass src/sass/style.scss --output-style expanded --source-map true --source-map-embed -o knotty/ ",      
+    "build-task:auto-prefix": " postcss knotty/*.css -u autoprefixer -r -map",
+
+    "build-task:babel": "babel src/js -d knotty/js --source-maps",
     "build": "npm-run-all -s -c build-task:*"
   },
   "repository": {

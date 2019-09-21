@@ -1,62 +1,60 @@
+@charset "UTF-8";
 
-// https://htmldog.com/guides/html/advanced/tables/
-
-
-// 
-// Table Classes
-// 
-
-.table {}
-.table--responsive {}
-
-
-// 
+// ----------------------------------------------------
 // Table Base
-// 
-
+// ----------------------------------------------------
 table {
     display: block;    
     width: fit-content;
     max-width: 100%;   
     overflow-x: auto;    
     border-collapse: collapse;     
-    margin: auto;
+    margin: $gap-big auto $gap-extra auto;
     @extend %small;
-    caption {}
+
+    caption {
+        padding: $gap-big $gap-base $gap-base $gap-base;
+    }
+
     thead {}
     tr {}    
-    th { text-align: left; }
-    td { white-space: nowrap; }
-    th, td { padding: 0.4em 0.5em;}
-    .meta { font-size: inherit; }
-}
 
-// 
+    th { 
+        text-align: left; 
+    }
+    td { 
+        white-space: nowrap; 
+    }
+    th, td { 
+        padding: $gap-small $gap-base;
+    }
+    .meta { 
+        font-size: inherit; 
+    }
+    img {
+        max-width: 300px;
+    }
+
+} //
+
+// -----------------------------------------------
 // Table Styles
-// 
+// -----------------------------------------------
 
 table {
-    background: $bg__content;
-    border: $border__content;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    caption {
-        padding: 1em 0.5em 0.5em 0.5em;
-    }
+    background: $rgba-black;
+    border: 1px dotted $rgba-white;
+    
     thead {
         border-bottom: 1px dotted #FFFFFF;
     }
     tr:not(:last-of-type) {
-        border-bottom: $border__content;
+        border-bottom: 1px dotted $rgba-white;
     }
     tr td:not(:last-child) {
-        border-right: $border__content;
+        border-right: 1px dotted $rgba-white;
     }  
     thead tr {
         border: 0;
     }
-}
-
-table img {
-    max-width: 300px;
 }

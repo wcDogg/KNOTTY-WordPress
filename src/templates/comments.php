@@ -1,32 +1,44 @@
 <?php
+/**
+ * comments.php
+ * Displays the Comments section. 
+ * 
+ * @requires comments.php - this file
+ * @requires section-comments.php
+ * @requires /inc/comments-list.php
+ * @requires /inc/comments-form.php
+ * @requires /sass/sections/_section-comments.scss
+ * 
+ * @package knotty
+ * @since Knotty 1.0
+ */
 
-if ( post_password_required() ) {
-	return;
-}
 
-echo '<section id="comments" class="section section--comments">';
+echo '<section id="comments" class="section comments">';
 	echo '<div class="section__inner">';
 
-		if ( have_comments() ) :
-			
-			echo '<h1 class="section__title">';			
-				$knotty_comment_count = get_comments_number();
+        if ( have_comments() ) :
+            
+			echo '<div class="section__title-wrap>';
+                echo '<h1 class="section__title">';			
+                    $knotty_comment_count = get_comments_number();
 
-				if ( '1' === $knotty_comment_count ) :
-					printf(
-						/* translators: 1: title. */
-						'One Comment'
-					);
-				else :
-					printf( // WPCS: XSS OK.
-						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( '%1$s Comment', '%1$s Comments', $knotty_comment_count, 'comments title', 'knotty' ) ),
-						number_format_i18n( $knotty_comment_count )
-					);
-				endif;
-			echo '</h1><!-- .section__title-->';
+                    if ( '1' === $knotty_comment_count ) :
+                        printf(
+                            /* translators: 1: title. */
+                            'One Comment'
+                        );
+                    else :
+                        printf( // WPCS: XSS OK.
+                            /* translators: 1: comment count number, 2: title. */
+                            esc_html( _nx( '%1$s Comment', '%1$s Comments', $knotty_comment_count, 'comments title', 'knotty' ) ),
+                            number_format_i18n( $knotty_comment_count )
+                        );
+                    endif;
+                echo '</h1><!-- .section__title-->';
+            echo '</div>';
 
-			echo '<div class="comments__list">';
+			echo '<div class="section__comments">';
 				wp_list_comments( array(
 					'style'       => 'div',
 					'short_ping'  => true,
@@ -36,7 +48,7 @@ echo '<section id="comments" class="section section--comments">';
 					'reverse_top_level' => true,
 					'reverse_children'  => true,
 				) );
-			echo '</ol><!-- .comments__list -->';
+			echo '</ol><!-- .section__comments -->';
 
 			the_comments_navigation();
 
@@ -46,7 +58,6 @@ echo '<section id="comments" class="section section--comments">';
 			endif;
 
 		endif; // Check for have_comments().
-
 
 		// Form Variables
 		$commenter = wp_get_current_commenter();
@@ -127,9 +138,11 @@ echo '<section id="comments" class="section section--comments">';
 			
 		); //
 
-
 		// div#respond.comment-respond
 		comment_form($comment_form_args); 
 
 	echo '</div><!-- .section__inner -->';
 echo '</section><!-- #comments -->';
+
+
+

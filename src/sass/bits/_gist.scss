@@ -1,0 +1,63 @@
+@charset "UTF-8";
+// -----------------------------------------
+// _gist.scss
+// -----------------------------------------
+
+
+// Code not inside <pre>
+code  {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 0.8em;
+    padding: 0.1em 0.3em;
+    color: $c__text;
+    background: $c__base;
+    border: 1px dotted $c__base-lt;
+    border-radius: 4px;
+} 
+
+pre code {
+    border: 0;
+}
+
+// Pre layout
+kbd, samp, pre, pre code  {  
+    overflow: auto;
+    overflow-wrap: normal;
+    white-space: pre;
+    word-break: break-word;
+    word-wrap: normal; 
+}    
+
+// Pre styles
+kbd, samp, pre  {  
+    margin: 0 0 1.6rem 0;
+    padding: 1em;
+    border: 1px solid;
+    border-color: #ddd #ddd #ccc;
+    border-radius: 3px;
+    background: #F8F8FF;
+}    
+
+// Font
+kbd, samp, pre, pre code,
+ .gist .blob-code-inner,
+ .gist .blob-num  {  
+    color: #24292e; 
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace !important;
+    // font-size: 16px !important;
+    line-height: 1.6 !important;  
+    font-weight: normal;  
+}    
+
+// Background
+kbd, samp, pre, pre code,
+.gist .gist-data,
+.gist .highlight  {  
+    // background: #F8F8FF !important;
+}  
+
+// .gist .gist-meta {
+//     background: #FFFFFF !important;
+//     color: #969896;
+// }
+

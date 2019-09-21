@@ -1,76 +1,30 @@
-// 
-// @this /sass/_attributeutes.scss
-// 
+@charset "UTF-8";
 
-// 
-// Attribute Classes
-// 
+// ---------------------------------------
+// attribute
+// styles match .meta
+// ---------------------------------------
 
-.attribute {}
-i.svg-inline--fa {}
-.attribute__label {}
-.attribute__value {}
-
-.attribute--true {}
-.attribute--false {}
-.attribute--maybe {}
-
-// Wrapper <span> or <a>
+%attribute, 
 .attribute {
-    @include condensed-400;
-    display: inline-flex;
-    align-items: center;
-    margin: 0.25rem 0;
-    padding: 0.3em 0.5em; 
-}
+	white-space: nowrap; 
+	padding: 4px;
+	@include font-size;
 
-// Wrapper <div>
-div.attribute {
-    display: flex;
-    align-items: center;
-}
+	i { 
+		@include font-size(big); 
+	}  
 
-// Font Awesome icon
-.attribute .svg-inline--fa {
-    font-size: 1.6em;
-    margin-right: 0.25em;
-}
-
-.attribute--highlight,
-.attribute--recommended {
-    .svg-inline--fa {
-        width: 1.125em; // match `fa-fw`
-    }    
-}
-
-
-// <span>
-.attribute__label {
-    margin-right: 0.2em;
-}
-
-// <span> or <a>
-.attribute__value {}
-
-
-// 
-// True, False, Maybe
-// 
-
-.attribute--true {
-    color: $color__true; 
-}
-
-.attribute--maybe {
-    color: $color__maybe;
-}
-
-.attribute--false {
-    color: $color__false; 
-}
+	.attribute__value {}
+	
+} // 
 
 a.attribute {
-    &:hover, &:active, &:focus {
-        color: $color__link-h;
-    }
-}
+	@extend %a-color; // +1 optional
+	// @extend %a-color-primary;
+	// @extend %a-color-secondary;
+	// @extend %a-color-alt;
+	// @extend %a-color-bright;
+	// @extend %a-color-subtle;
+} //
+

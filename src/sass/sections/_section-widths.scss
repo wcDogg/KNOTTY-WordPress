@@ -1,0 +1,54 @@
+@charset "UTF-8";
+// -----------------------------------------
+// .section Content Widths
+// -----------------------------------------
+
+// @extend %width-base;
+// @extend %width-wide;
+// @extend %width-full;
+// @extend %width-flex;
+// @extend %width-overflow;
+
+// The default content width
+%width-base {
+	max-width: $width-base;
+	margin: auto;
+}
+
+// A wide content width
+%width-wide {
+	max-width: $width-wide;
+	margin: auto;
+}
+
+// Block width is 100% of available
+%width-full {
+	max-width: 98%;
+}
+
+// Will allow content to overflow X.
+// Best for wrapping componenets that
+// have their own width rules - ie gallery.
+%width-flex {
+	display: flex;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin: auto;
+	// may need a max-width on parent 
+	// + overflow-x: hidden on child? 
+}
+
+// Goes on parent who's one and only
+// child needs to overlfow on the X.
+// Good for wide tables
+%width-overflow {
+	display: flex;
+	justify-content: center;
+	> :first-child {
+		display: block;
+		overflow-x: auto;	
+	}
+}
+
+

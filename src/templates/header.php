@@ -1,3 +1,14 @@
+ <?php
+/**
+ * header.php
+ * Displays the site header
+ * 
+ * @package knotty
+ * @since Knotty 1.0
+ */
+?>   
+
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -20,24 +31,10 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'knotty' ); ?></a>
  
 	<header id="header" class="site__header">
-		<h1 class="branding">
-			<a class="white branding__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="Home">
-				<span class="branding__logo">
-						<!-- svg here -->
-				</span>
-				<span class="branding__text">
-					<?php bloginfo( 'name' ); ?>               
-				</span>
-			</a>
-		</h1>
-
-		<nav id="nav-main" class="white nav nav--horizontal" role="navigation" aria-label="Popular Pages">
-			<?php wp_nav_menu( array(
-				'theme_location' => 'menu-main',	
-			) ); ?>
-		</nav>
-
+		
 		<?php 
+			get_template_part('parts/nav/nav', 'branding');
+			get_template_part('parts/nav/nav', 'main'); 
 			get_template_part('parts/nav/nav', 'follow'); 
 			get_template_part('parts/nav/nav', 'mobile'); 
 		?>

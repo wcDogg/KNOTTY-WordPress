@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+// ----------------------------------------------------------------
+// Test Mode
+// Include (true) or exclude (false) example code wrapped in:
+// @include test-mode {@content}
+// ----------------------------------------------------------------
+
+$test-mode: true;
+
+// ----------------------------------------------------------------
+// Base font size sets `1rem`
+// The only place this $global is used directly is on 'html' (root). 
+// Changing this $global cascades to all fonts defined with this @mixin.
+// Replace `font-size` with @include font-size(1);
+// ----------------------------------------------------------------
+
+$font-size: 22px;
+$font-size__small: 0.8;
+$font-size__big: 1.25;
+$font-size__h1: 1.6;
+$font-size__h2: 1.266;
+$font-size__h3: 1.125;
+$font-size__h4: 1;
+$font-size__h5: 0.8;
+$font-size__h6: 0.8;
+
+
+// -----------------------------------------------------------------
+// Max Content Width
+// ----------------------------------------------------------------- 
+
+$width-base: 840px;
+$width-narrow: 600px;
+$width-wide: 960px;
+$gap-extra: 40px;
+
+$gap-big: 18px; 
+$gap-base: 12px;
+$gap-small: 6px;
+
+// ------------------------------------------------------------------
+// This theme uses Sours Sans Pro
+// Available weights are 300, 400, 600
+// ------------------------------------------------------------------
+
+$font-family__sans: 'Source Sans Pro', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', sans-serif,  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__serif: 'Georgia', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__mono: 'Menolo', 'Consolas', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__heading: 'Source Sans Pro', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__subheading: 'Source Sans Pro', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+
+

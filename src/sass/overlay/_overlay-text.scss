@@ -1,0 +1,97 @@
+@charset "UTF-8";
+// ---------------------------------------------------
+// Overlay.scss @extend
+// ---------------------------------------------------
+
+// @extend %overlay-text-lt; 
+// @extend %overlay-text-ct;
+// @extend %overlay-text-rt;
+// @extend %overlay-text-lc; 
+// @extend %overlay-text-cc;
+// @extend %overlay-text-rc;
+// @extend %overlay-text-lb; 
+// @extend %overlay-text-cb;
+// @extend %overlay-text-rb;
+
+
+//-----------------------------------------
+// @extend overlay-text;
+// Position of text
+// Used by overlay-mix.scss
+//-----------------------------------------
+ 
+// top row
+%overlay-text-lt {
+	// .overlay__wrap {
+		grid-template-columns: auto auto 1fr;
+		grid-template-rows: auto auto 1fr;
+		text-align: left;
+	// }	
+} //
+
+%overlay-text-ct {
+	// .overlay__wrap {
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-rows: auto auto 1fr;
+		text-align: center;
+	// }	
+} //
+
+%overlay-text-rt {
+	// .overlay__wrap {
+		grid-template-columns: 1fr auto auto;
+		grid-template-rows: auto auto 1fr;
+		text-align: right;
+	// }	
+} //
+
+// center row 
+%overlay-text-lc {
+	// .overlay__wrap {
+		grid-template-columns: auto auto 1fr;
+		grid-template-rows: 1fr auto 1fr;
+		text-align: left;
+	// }	
+} //
+
+%overlay-text-cc {
+	// .overlay__wrap {
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-rows: 1fr auto 1fr;
+		text-align: center;
+	// }	
+} //
+
+%overlay-text-rc {
+	// .overlay__wrap {
+		grid-template-columns: 1fr auto auto;
+		grid-template-rows: 1fr auto 1fr;
+		text-align: right;
+	// }	
+} //
+
+// bottom bottom row
+%overlay-text-lb {
+	// .overlay__wrap {
+		grid-template-columns: auto auto 1fr;
+		grid-template-rows: 1fr auto auto;
+		text-align: left;
+	// }
+} //
+
+%overlay-text-cb {
+	// .overlay__wrap {
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-rows: 1fr auto auto;
+		text-align: center;
+	// }
+} //
+
+%overlay-text-rb {
+	// .overlay__wrap {
+		grid-template-columns: 1fr auto auto;
+		grid-template-rows: 1fr auto auto;
+		text-align: right;
+	// }	
+} //
+

@@ -1,6 +1,14 @@
 <?php
+/**
+ * page.php
+ * Displays single site pages
+ * 
+ * @package knotty
+ * @since Knotty 1.0
+ */
 
-get_header();
+
+get_header(); 
 
 while ( have_posts() ) :
 
@@ -9,4 +17,4 @@ while ( have_posts() ) :
 
 endwhile; // End of the loop.
 
-get_footer();
+get_footer(); 

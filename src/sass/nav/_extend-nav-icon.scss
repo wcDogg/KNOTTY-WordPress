@@ -1,0 +1,253 @@
+@charset 'UTF-8';
+// ---------------------------------------------
+// _extend-nav-icon.scss
+// @see nav.md 
+// ---------------------------------------------
+
+
+
+// ---------------------------------------------
+// <ul> Icon Horizontal 
+// ---------------------------------------------
+%nav-icon-horizontal {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;	  
+	    
+} //
+
+
+// ---------------------------------------------
+// <ul> Icon Vertical 
+// ---------------------------------------------
+%nav-icon-vertical {
+
+    // nothing here? 
+
+} //
+
+
+// ---------------------------------------------
+// Default icon
+// ---------------------------------------------
+%menu-icon {
+    
+    a {
+        display: inline-block;
+        @include font-size(small);
+        line-height: 1;
+        margin: 6px;
+    }
+    a i,
+    a svg {
+        border-radius: $border-radius__icon;
+        border: $border__icon;
+        padding: 0.5em;
+        // magic number
+        // 1em desired size + (2 * padding)
+        width: 2em;
+        height: 2em;      
+    }
+    // extend
+    a {
+        @extend %after-bg;
+        @extend %after-wink-in-c; 
+        border-radius: $border-radius__icon; 
+        border: 1px solid;
+        border-color: transparent;
+        transition: transform 250ms linear, color 300ms linear;	        
+         &::after {
+            transition: transform 250ms linear;	
+            border-radius: $border-radius__icon;    
+        }
+    }
+
+} // 
+
+%menu-icon-default {
+    a {
+        color: #ffffff;
+        background: $c__base;     
+        &::after {    
+            background: $c__primary;              
+        }	 
+        &:hover {
+            color: #000000;
+        }  
+        &:focus {
+            border-color: rgba($c__primary, 1);
+        }      
+    }
+} //
+
+%menu-icon-primary {
+    a {
+        color: #ffffff;
+        background: $c__base;     
+        &::after {    
+            background: $c__primary;              
+        }	 
+        &:hover {
+            color: #000000;
+        }  
+        &:focus {
+            border-color: rgba($c__primary, 1);
+        }      
+    }
+} //
+
+%menu-icon-secondary {
+    a {
+        color: #ffffff;
+        background: $c__base;     
+        &::after {    
+            background: $c__secondary;              
+        }	 
+        &:hover {
+            color: #000000;
+        }  
+        &:focus {
+            border-color: rgba($c__secondary, 1);
+        }      
+    }
+} //
+
+%menu-icon-alt {
+    a {
+        color: #ffffff;
+        background: $c__base;     
+        &::after {    
+            background: $c__alt;              
+        }	 
+        &:hover {
+            color: #000000;
+        }  
+        &:focus {
+            border-color: rgba($c__alt, 1);
+        }      
+    }
+} //
+
+%menu-icon-white {
+    a {
+        color: #ffffff;
+        background: $c__base;     
+        &::after {    
+            background: #ffffff;              
+        }	 
+        &:hover {
+            color: #000000;
+        }  
+        &:focus {
+            border-color: rgba(#ffffff, 1);
+        }      
+    }
+} //
+
+
+// ---------------------------------------------
+// Social Icons
+// ---------------------------------------------
+%menu-icon-social {
+
+    color: #ffffff;
+    background: $c__base; 
+    &:hover {
+        color: #FFFFFF;
+    } 
+
+    .icon--facebook {
+        &::after {    
+            background: $c__facebook;              
+        }	
+        &:focus {
+            border-color: rgba($c__facebook, 1);
+        }              
+    }
+    .icon--twitter {
+        &::after {    
+            background: $c__twitter;              
+        }	
+        &:focus {
+            border-color: rgba($c__twitter, 1);
+        }   
+    }
+    .icon--youtube {
+        &::after {    
+            background: $c__youtube;              
+        }	
+        &:focus {
+            border-color: rgba($c__youtube, 1);
+        }   
+    }
+    .icon--pinterest {
+        &::after {    
+            background: $c__pinterest;              
+        }	
+        &:focus {
+            border-color: rgba($c__pinterest, 1);
+        }   
+    }
+    .icon--instagram {
+        &::after {    
+            background: $c__instagram;              
+        }	
+        &:focus {
+            border-color: rgba($c__instagram, 1);
+        }   
+    }
+    .icon--amazon {
+        &::after {    
+            background: $c__amazon;              
+        }	
+        &:focus {
+            border-color: rgba($c__amazon, 1);
+        }   
+    }
+    .icon--etsy {
+        &::after {    
+            background: $c__etsy;              
+        }	
+        &:focus {
+            border-color: rgba($c__etsy, 1);
+        }   
+    }
+    .icon--linkedin {
+        &::after {    
+            background: $c__linkedin;              
+        }	
+        &:focus {
+            border-color: rgba($c__linkedin, 1);
+        }   
+    }
+    .icon--github {
+        &::after {    
+            background: $c__github;              
+        }	
+        &:focus {
+            border-color: rgba($c__github, 1);
+        }   
+    }
+    .icon--codepen {
+        &::after {    
+            background: $c__codepen;              
+        }	
+        &:focus {
+            border-color: rgba($c__codepen, 1);
+        }   
+    }
+    .icon--jsfiddle {
+        &::after {    
+            background: $c__jsfiddle;              
+        }	
+        &:focus {
+            border-color: rgba($c__jsfiddle, 1);
+        }   
+    }    
+
+} // 
+

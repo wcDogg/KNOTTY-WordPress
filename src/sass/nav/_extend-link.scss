@@ -1,0 +1,279 @@
+@charset 'UTF-8';
+// ---------------------------------------------
+// _extend-link.scss
+// @see nav.md 
+// ---------------------------------------------
+
+
+// ---------------------------------------------
+// <a> base
+// ---------------------------------------------
+a {
+	text-decoration: none;
+	// white-space: nowrap;
+	outline: none;		
+} 
+
+
+// ---------------------------------------------
+// <a> with underline for body
+// ---------------------------------------------
+%a-underline {
+	transition: all 200ms;
+	padding-bottom: 2px;
+	color: inherit;
+	border-bottom: 2px dotted;
+	&:hover, &:active, &:focus {
+		padding: 2px 6px;
+		border-radius: 4px;
+		border-color: transparent;
+	}
+	// default
+	border-color: $c__primary;
+	&:hover, &:active, &:focus {
+		background-color: $c__primary;
+	}
+} //
+
+%a-underline-primary {
+	border-color: $c__primary;
+	&:hover, &:active, &:focus {
+		background-color: $c__primary;
+	}
+}
+
+%a-underline-secondary {
+	border-color: $c__secondary;
+	&:hover, &:active, &:focus {
+		background-color: $c__secondary;
+	}
+}
+
+%a-underline-alt {
+	border-color: $c__alt;
+	&:hover, &:active, &:focus {
+		background-color: $c__alt;
+	}
+}
+
+%a-underline-bright {
+	border-color: $c__base-bright;
+	&:hover, &:active, &:focus {
+		background-color: $c__base-bright;
+	}
+}
+
+%a-underline-subtle {
+	border-color: $c__base-subtle;
+	&:hover, &:active, &:focus {
+		background-color: $c__base-subtle;
+	}
+}
+
+%a-underline-inherit {
+	color: inherit;
+	border-color: inherit;
+	&:hover, &:active, &:focus {
+		color: #ffffff;
+		background-color: $c__base-subtle;
+	}
+}
+
+
+// ---------------------------------------------
+// <a> NO underline for body
+// ---------------------------------------------
+%a-color {
+	transition: all 200ms;
+	border: none;
+	&:hover, &:active, &:focus {
+		padding: 2px 6px;
+		color: #ffffff;
+	}
+	// default
+	color: $c__primary;	
+	&:hover, &:active, &:focus {
+		background-color: $c__primary;
+	}
+} //
+
+%a-color-primary {
+	color: $c__primary;	
+	&:hover, &:active, &:focus {
+		background-color: $c__primary;
+	}
+}
+
+%a-color-secondary {
+	color: $c__secondary;	
+	&:hover, &:active, &:focus {
+		background-color: $c__secondary;
+	}
+}
+
+%a-color-alt {
+	color: $c__alt;	
+	&:hover, &:active, &:focus {
+		background-color: $c__alt;
+	}
+}
+
+%a-color-bright {
+	color: $c__base-bright;	
+	&:hover, &:active, &:focus {
+		background-color: $c__base-bright;
+	}
+}
+
+%a-color-subtle {
+	color: $c__base-subtle;	
+	&:hover, &:active, &:focus {
+		background-color: $c__base-subtle;
+	}
+}
+
+
+// ---------------------------------------------
+// <a> for title blocks
+// ---------------------------------------------
+%a-title {
+	display: block;
+	transition: all 200ms;
+	border: none;
+	padding: 0;
+
+	> * {color: inherit;} 
+
+	&:hover, &:active, &:focus {
+		color: #ffffff;
+	}
+	&:hover, &:active {	
+		background-color: transparent;
+	}	
+	&:focus {
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+
+	// default
+	color: $c__primary;
+	&:focus {
+		background-color: $c__primary;
+	}
+	
+} //
+
+%a-title-primary {
+	color: $c__primary;
+	&:focus {
+		background-color: $c__primary;
+	}	
+}
+
+%a-title-secondary {
+	color: $c__secondary;	
+	&:focus {
+		background-color: $c__secondary;
+	}
+}
+
+%a-title-alt {
+	color: $c__alt;	
+	&:focus {
+		background-color: $c__alt;
+	}
+}
+
+%a-title-bright {
+	color: $c__base-bright;	
+	&:focus {
+		background-color: $c__base-bright;
+	}
+}
+
+%a-title-subtle {
+	color: $c__base-subtle;	
+	&:focus {
+		background-color: $c__base-subtle;
+	}
+}
+
+%a-title-white {
+	color: #ffffff;	
+	&:hover, &:active {
+		color: $c__base-bright;
+	}
+	&:focus {
+		background-color: $c__base-bright;
+	}
+}
+
+%a-title-offer {
+	color: $c__offer;	
+	&:focus {
+		background-color: $c__offer;
+	}
+}
+
+
+// ---------------------------------------------
+// <a> for menus
+// ---------------------------------------------
+%a-menu {
+	display: flex;
+	align-items: center;
+	// align-content: center;
+	transition: all 200ms;
+	border: none;
+	&:hover, &:active, &:focus {
+		color: #ffffff;
+	}
+	// default
+	color: $c__primary;
+	&:hover, &:active, &:focus {
+		background-color: $c__primary;
+	}	
+} //
+
+%a-menu-primary {
+	color: $c__primary;
+	&:hover, &:active, &:focus {
+		background-color: $c__primary;
+	}	
+}
+
+%a-menu-secondary {
+	color: $c__secondary;	
+	&:hover, &:active, &:focus {
+		background-color: $c__secondary;
+	}
+}
+
+%a-menu-alt {
+	color: $c__alt;	
+	&:hover, &:active, &:focus {
+		background-color: $c__alt;
+	}
+}
+
+%a-menu-bright {
+	color: $c__base-bright;	
+	&:hover, &:active, &:focus {
+		background-color: $c__base-bright;
+	}
+}
+
+%a-menu-subtle {
+	color: $c__base-subtle;	
+	&:hover, &:active, &:focus {
+		background-color: $c__base-subtle;
+	}
+}
+
+%a-menu-white {
+	color: #ffffff;	
+	&:hover, &:active, &:focus {
+		background-color: $c__base;
+	}
+}
+

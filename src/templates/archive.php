@@ -1,34 +1,45 @@
 <?php
+/**
+ * archive.php
+ * Displays categores, tags, and other taxonomies
+ * 
+ * @package knotty
+ * @since Knotty 1.0
+ */
+?>
 
-get_header();
 
-echo '<article class="archive">';
+<?php get_header(); ?>
 
-	get_template_part('parts/headers/header', 'archive');
+<article class="archive">
 
-	if ( have_posts() ) : 
+    <?php 
+        get_template_part('parts/archive/header', 'archive');
+    ?>
+    
+    <?php if ( have_posts() ) : ?>
 
-		echo '<section class="section section--cards facetwp-template">';	
-			echo '<div class="section__inner">';				
-				echo '<div class="section__grid ">';			
-					/* Start the Loop */
-					while ( have_posts() ) :					
+		<section class="section cards cards--multi facetwp-template">	
+			<div class="section__inner">				
+				<div class="section__cards ">
+
+					<?php while ( have_posts() ) :					
 						the_post();	
-						get_template_part( 'parts/card', get_post_type() );	
-					endwhile;
-				echo '</div><!-- .section__grid -->';
+						get_template_part( 'parts/card/card', get_post_type() );	
+                    endwhile; ?>
+                    
+				</div><!-- .section__cards -->
 
-				echo '<button class="button fwp-load-more">Show More</button>';
+				<button class="button fwp-load-more">Show More</button>
 				
-			echo '</div><!-- .section__inner -->';
-		echo '</section><!-- .section -->';	
+			</div><!-- .section__inner -->
+		</section><!-- .section -->
 		
-	else :
+	<?php else :
+		get_template_part( 'parts/section/section', 'none' );
+	endif; ?>
 
-		get_template_part( 'parts/content', 'none' );
+</article><!-- #index  -->
 
-	endif;
+<?php get_footer(); ?>
 
-echo '</article><!-- .archive -->';
-
-get_footer();

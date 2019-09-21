@@ -1,171 +1,63 @@
-// 
-// <nav> Shared
-// 
+@charset "UTF-8";
+// --------------------------------------
+// _nav.scss
+// --------------------------------------
 
-nav {
-    margin: 0;
-    padding: 0;   
-
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 4px;
-        padding: 0;        
-    }
-
-    &.nav--vertical ul {
-        flex-direction: column; 
-    }
-
-    &.nav--horizontal ul {
-        flex-direction: row; 
-    }    
-
-    li {
-        margin: 0;
-        padding: 0;
-    }
-
+// nav#main-nav
+ul#main-menu {
+    @extend %nav-text-horizontal;
     a {
-        display: block;
-    }
+        @extend %a-menu; // +1 optional
+        // @extend %a-menu-primary;
+        // @extend %a-menu-secondary;
+        // @extend %a-menu-alt;
+        // @extend %a-menu-subtle;
+        // @extend %a-menu-bright;
+        @extend %a-menu-white;
+    }	       
 
-} // 
+} //
 
 
-//
-// <nav> Text
-// @see /sass/typography/__links.scss
-// Add 'primary` or `secondary` or `alt` 
-// to any <nav> or <ul> or <a>
-// 
-
-.nav--text {
-
-    ul {
-        @include condensed-400;
-        @include font-size(0.79);
-        line-height: 1;
-    }
-
+// nav#popular-nav
+ul#popular-menu {
+    @extend %nav-text-horizontal;
     a {
-        color: $color__alt;
-    }
-
-    &:hover, &:active, &:focus {
-        color: #ffffff;
-    }
-
-    li.active a,
-    a.active {
-        text-decoration: underline;
-        text-decoration-style: dotted;
-        text-decoration-skip-ink: auto;
-    } 
-    
-    &.nav--vertical a {
-        padding: 0.3em 4px;
-    }
-
-    &.nav--horizontal a {
-        padding: 0.3em 0.62em;
-        text-align: center;
-    }      
-
-} // 
+        @extend %a-menu; // +1 optional
+        // @extend %a-menu-primary;
+        // @extend %a-menu-secondary;
+        // @extend %a-menu-alt;
+        // @extend %a-menu-subtle;
+        // @extend %a-menu-bright;
+        @extend %a-menu-white;
+    }	 
+}
 
 
-//
-// <nav> Icons
-// 
-
-.nav--icons {
-    ul {
-        @include font-size(1);
-    }
+// nav#footer-nav
+ul#footer-menu {
+    @extend %nav-text-horizontal;
     a {
-        margin: 6px;	        
-    }  
-
-    i {
-        font-size: 1em;
-        padding: 0.5em;
-        height: 2em; // font-szie + (padding x 2)
-        width: 2em;
-        text-align: center;
-        border: $border__icon;
-        border-radius: $border-radius__icon;
-    }
-
-} // 
+        @extend %a-menu; // +1 optional
+        // @extend %a-menu-primary;
+        // @extend %a-menu-secondary;
+        // @extend %a-menu-alt;
+        // @extend %a-menu-subtle;
+        // @extend %a-menu-bright;
+        @extend %a-menu-white;
+    }	 
+} //
 
 
-// 
-// Icon Transitions
-// 
+// nav.follow-nav 
+ul.follow-menu {
+    @extend %nav-icon-horizontal; 
+    @extend %menu-icon;
+    @extend %menu-icon-default;
+    // @extend %menu-icon-primary;
+    // @extend %menu-icon-secondary;
+    // @extend %menu-icon-alt;
+    // @extend %menu-icon-white;
+    // @extend %menu-icon-social;
+} //
 
-.nav--icons a i {
-	position: relative;
-	z-index: 1;
-    transition: color 200ms linear;	
-    // border: $border__icon;
-    // border-radius: $border-radius__icon;
-    	
-	&::after {
-		content: '';
-        position: absolute;
-		z-index: -1;        
-		top: 0;
-		right: 0;
-		width: 100%;
-        height: 100%;
-        transform: scale(0);
-        transform-origin: center;
-		transition: transform 200ms linear;
-		border-radius: $border-radius__icon;
-    }
-    
-    &:hover::after,
-    &:active::after,
-    &:focus::after {
-        transform: scale(1);
-        transform-origin: center;    
-    }
-
-} // 
-
-.nav--icons a i {
-    color: rgba(#ffffff, 0.7);
-    background: rgba($color__primary, 0.7);	
-
-    &:hover, &:active, &:focus {
-        color: #ffffff !important;
-    }
-
-    &::after {background: $color__alt;}
-}
-
-.nav--icons.primary a i {
-    background: rgba($color__primary, 0.7);	
-    &::after {background: $color__alt;}
-}
-
-.nav--icons.secondary a i {
-    background: rgba($color__secondary, 0.7);	
-    &::after {background: $color__alt;}    
-}
-
-.nav--icons.alt a i {
-    background: rgba($color__alt, 0.7);	
-    &::after {background: $color__secondary;}   
-}
-
-
-// 
-// One-off menu alignments
-// 
-
-.follow ul {
-    justify-content: center;
-}

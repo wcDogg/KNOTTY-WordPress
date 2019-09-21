@@ -1,31 +1,18 @@
-//
-// @file /sass/helpers/_hidden-accessible.scss
-//
+@charset "UTF-8";
 
-.is-hidden {
-	// display: none;
-}
-
+// ---------------------------------
+// Visibility
+// ---------------------------------
 
 .is-hidden-accessible {
  	@include hidden-accessible;
-}
-
-.is-visible {
-	// set properties on elenemt 
-	// see: _c-top.scss
 }
 
 .screen-reader-text {
 	@include screen-reader-text;
 }
 
-
 template {
-	display: none;
-}
-
-[hidden] {
 	display: none;
 }
 

@@ -1,0 +1,277 @@
+@charset "UTF-8";
+// ---------------------------------------------------
+// Overlay.scss
+// Gradient @mixin
+// ---------------------------------------------------
+
+// $corner = lt || lb || rt || rb
+// @include overlay-solid(center, rgba(#000000, 0.9)); // also has center
+// @include overlay-wash(lb, $c__base-dk);
+// @include overlay-corner-sharp(lb, rgba($c__base-dk, 1), rgba($c__base-dk, 0.2));
+// @include overlay-corner-soft(lb, rgba($c__base-dk, 1));
+// @include overlay-vignette(lb, rgba($c__base-dk, 1));
+// @include overlay-football(lb, rgba($c__base-dk, 1));
+
+
+//-----------------------------------------------------
+// @include overlay-solid($corner, $color);
+// $corner to color = lt || lb || rt || rb || center
+//-----------------------------------------------------
+@mixin overlay-solid($corner: center, $color: rgba(#000000, 0.9)) {
+	
+	@if $corner == lt {
+		@extend %overlay-text-lt;
+	} //
+	@else if $corner == lb {
+		@extend %overlay-text-lb; 
+	} //
+	@else if $corner == rt {
+		@extend %overlay-text-rt;
+	} //
+	@else if $corner == rb {
+		@extend %overlay-text-rb;
+	} // 
+	@else if $corner == center {
+		text-align: center;
+	}
+	@else {
+		text-align: center;
+	}
+
+	.overlay {
+		background-color: $color;
+	}
+	
+} //
+
+
+//-----------------------------------------------------
+// @include overlay-wash($corner, $color);
+// $corner to color = lt || lb || rt || rb 
+//-----------------------------------------------------
+@mixin overlay-wash($corner: lb, $color: $c__base-dk) {
+	
+	@if $corner == lt {
+		@extend %overlay-text-lt;
+		.overlay {
+			background-image: linear-gradient(
+				to right bottom,
+				$color,
+				rgba($color, 0.1) ); //			
+		}
+	} //
+	@else if $corner == lb {
+		@extend %overlay-text-lb; 
+		.overlay {
+			background-image: linear-gradient(
+				to right top,
+				$color,
+				rgba($color, 0.1) ); //				
+		}
+	} //
+	@else if $corner == rt {
+		@extend %overlay-text-rt;
+		.overlay {
+			background-image: linear-gradient(
+				to left bottom,
+				$color,
+				rgba($color, 0.1) ); //				
+		}
+	} //
+	@else if $corner == rb {
+		@extend %overlay-text-rb;
+		.overlay {
+			background-image: linear-gradient(
+				to left top,
+				$color,
+				rgba($color, 0.1) ); //				
+		}
+	} // 
+	
+} //
+
+
+//-----------------------------------------------------
+// @include overlay-corner-sharp($corner, $color);
+// $corner to color = lt || lb || rt || rb 
+//-----------------------------------------------------
+@mixin overlay-corner-sharp($corner: lb, $color: rgba($c__base-dk, 0.85), $sheer: rgba($c__base-dk, 0.2), $hover: false ) {
+		
+	@if $corner == lt {
+		@extend %overlay-text-lt;
+		.overlay {				
+			background-image: radial-gradient(
+				at right bottom,
+				$sheer 70%,
+				$color 70%); //				 
+		}	
+	} //
+	@if $corner == lb {
+		@extend %overlay-text-lb; 
+		.overlay {	
+			background-image: radial-gradient(
+				at right top,
+				$sheer 70%,
+				$color 70%); //				 
+		}	
+	} //
+	@if $corner == rt {
+		@extend %overlay-text-rt;
+		.overlay {	
+			background-image: radial-gradient(
+				at left bottom,
+				$sheer 70%,
+				$color 70%); //				 
+		}	
+	} //
+	@if $corner == rb {
+		@extend %overlay-text-rb;
+		.overlay {	
+			background-image: radial-gradient(
+				at left top,
+				$sheer 70%,
+				$color 70%); //				 
+		}	
+	} // 
+	
+} //
+
+
+//-----------------------------------------------------
+// @include overlay-corner-soft($corner, $color);
+// $corner to color = lt || lb || rt || rb 
+//-----------------------------------------------------
+@mixin overlay-corner-soft($corner: lb, $color: rgba($c__base-dk, 1) ) {
+	
+	@if $corner == lt {
+		@extend %overlay-text-lt;
+		.overlay {	
+			background-image: radial-gradient(
+				at right bottom,
+				transparent 68%,
+				$color ); //
+		} //
+	} //
+	@if $corner == lb {
+		@extend %overlay-text-lb; 
+		.overlay {	
+			background-image: radial-gradient(
+				at right top,
+				transparent 68%,
+				$color ); //
+		} //
+	} //
+	@if $corner == rt {
+		@extend %overlay-text-rt;
+		.overlay {	
+			background-image: radial-gradient(
+				at left bottom,
+				transparent 68%,
+				$color ); //
+		} //
+	} //
+	@if $corner == rb {
+		@extend %overlay-text-rb;
+		.overlay {	
+			background-image: radial-gradient(
+				at left top,
+				transparent 68%,
+				$color ); //
+		} //
+	} // 
+	
+} //
+
+
+//-----------------------------------------------------
+// @include overlay-vignette($corner, $color);
+// $corner to color = lt || lb || rt || rb 
+//-----------------------------------------------------
+@mixin overlay-vignette($corner: lb, $color: rgba($c__base-dk, 1) ) {
+	
+	@if $corner == lt {
+		@extend %overlay-text-lt;
+	}
+	@if $corner == rt {
+		@extend %overlay-text-rt;
+	}
+	@if $corner == rb {
+		@extend %overlay-text-rb;
+	}
+	@if $corner == lb {
+		@extend %overlay-text-lb;
+	}
+	.overlay {
+		background-image: radial-gradient(
+			transparent 58%,
+			$color );		
+	} 
+	
+} //
+
+
+//-----------------------------------------------------
+// @include overlay-football($corner, $color);
+// $corner to color = lt || lb || rt || rb
+//-----------------------------------------------------
+@mixin overlay-football($corner: lb, $color: rgba($c__base-dk, 01) ) {
+
+	@if $corner == lt {
+		@extend %overlay-text-lt;
+		.overlay {
+			background-image: 
+				radial-gradient(
+					at left top,
+					transparent 68%,
+					$color ),
+				radial-gradient(
+					at right bottom,
+					transparent 68%,
+					$color ); //				
+		} //		
+	}
+	@if $corner == rb {
+		@extend %overlay-text-rb;
+		.overlay {
+			background-image: 
+				radial-gradient(
+					at left top,
+					transparent 68%,
+					$color ),
+				radial-gradient(
+					at right bottom,
+					transparent 68%,
+					$color ); //				
+		} //		
+	}
+	@if $corner == rt {
+		@extend %overlay-text-rt;
+		.overlay {
+			background-image:
+				radial-gradient(
+					at right top,
+					transparent 68%,
+					$color ),
+				radial-gradient(
+					at left bottom,
+					transparent 68%,
+					$color ); //				
+		} //
+	}
+	@if $corner == lb {
+		@extend %overlay-text-lb;
+		.overlay {
+			background-image: 
+				radial-gradient(
+					at right top,
+					transparent 68%,
+					$color ),
+				radial-gradient(
+					at left bottom,
+					transparent 68%,
+					$color ); //				
+		} //
+	}		
+
+} //
+

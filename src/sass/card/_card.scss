@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+// ------------------------------------------------------
+// Section Structure
+// ------------------------------------------------------
+section.section.cards {
+    .section__inner {}
+        .section__title-wrap {}
+            .section__title {}
+            .section__subtitle {}
+            .section__description {}
+        .section__cards {} // grid here
+}
+
+
+// ------------------------------------------------------
+// Card Varients
+// ------------------------------------------------------
+.card {}
+.card.card--post {}
+.card.card--page {}
+.card.card--lubricant {}
+.card.card--offer {}
+.card.card--brand {}
+.card.card--taxonomy {}
+
+
+// ------------------------------------------------------
+// .card--post Structure
+// ------------------------------------------------------
+div.card--post {
+    a.card__image-wrap-wrap {}
+        img {}
+    div.card__content-wrap {}
+        a.card__title-wrap {}
+            h1.card__title {}
+            h2.card__subtitle {}
+        div.card__text {}
+        div.card__meta {}
+}
+
+
+// ------------------------------------------------------
+// .card--page Structure
+// ------------------------------------------------------
+div.card--page {
+    a.card__image-wrap-wrap {}
+        img {}
+    div.card__content-wrap {}
+        a.card__title-wrap {}
+            h1.card__title {}
+            h2.card__subtitle {}
+        div.card__text {}
+}
+
+// ------------------------------------------------------
+// .card--lubricant Structure
+// ------------------------------------------------------
+div.card--lubricant {
+    a.card__image-wrap-wrap {}
+        img {}
+    div.card__content-wrap {}
+        a.card__title-wrap {}
+            h1.card__title {}
+            h2.card__subtitle {}
+        div.card__meta {}
+        nav.buy {}
+}
+
+
+// ------------------------------------------------------
+// .card--offer Structure
+// ------------------------------------------------------
+div.card--offer {
+    div.card__content-wrap {}
+        div.card__meta {}
+        a.card__title-wrap {}
+            h1.card__title {}
+            h2.card__subtitle {}
+        div.card__text {}
+        a.link--offer {}
+}
+
+
+// ------------------------------------------------------
+// .card--brand Structure
+// ------------------------------------------------------
+div.card--brand {
+    a.overlay__link {}
+        div.overlay__wrap {}
+            div.overlay {}
+            div.overlay__img {} 
+        div.overlay__wrap {}
+            div.overlay {}
+            div.overlay__content {} // .card__title-wrap
+                h2.card__title {}
+            div.overlay__img {} 
+
+    div.card__action {}
+    
+}
+
+// ------------------------------------------------------
+// .card--taxonomy Structure
+// ------------------------------------------------------
+div.card--taxonomy {
+    div.card__image-wrap-wrap {}
+        img {}
+        a.card__title-wrap {}
+            h1.card__title {}
+            h2.card__subtitle {}
+
+}
+

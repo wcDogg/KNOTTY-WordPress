@@ -1,0 +1,87 @@
+@charset 'UTF-8';
+
+// ------------------------------------------------
+// Image Placeholders
+// ------------------------------------------------
+// @include gradient-four-points;
+// @include gradient-sour-ball;
+// @include gradient-moonrise;
+
+
+// ------------------------------------------------
+// @include gradient-four-points($corner, $circle);
+// ------------------------------------------------
+@mixin gradient-four-points($corner: $c__base-dk, $circle: $c__base-subtle) {
+		background-image: 
+		// left top	
+		radial-gradient(
+			at right bottom,
+			transparent 70%,
+			rgba($corner,0.25) 70%,
+		),			
+		// right top	
+		radial-gradient(
+			at left bottom,
+			transparent 70%,
+			rgba($corner,0.45) 70%,
+		),	
+		// right bottom	
+		radial-gradient(
+			at left top,
+			transparent 70%,
+			rgba($corner,0.75) 70%,
+		),		
+		// left bottom	
+		radial-gradient(
+			at right top,
+			transparent 70%,
+			rgba($corner,0.65) 70%,
+		),			
+	; //
+	background-color: $circle;
+} //
+
+
+// ------------------------------------------------
+// @include gradient-sour-ball;
+// ------------------------------------------------
+@mixin gradient-sour-ball{
+    background-image: 
+        radial-gradient(
+            at top,
+            transparent 68%,				
+            rgba($c__base-dk,0.7) 68%,
+        ), 		
+        radial-gradient(
+            at bottom,
+            transparent 68%,
+            rgba($c__base-dk,0.5) 68%,			
+        ), 	
+    ; //
+    background-color: $c__base-subtle;
+} //
+
+
+// ------------------------------------------------
+// @include gradient-moonrise;
+// ------------------------------------------------
+@mixin gradient-moonrise{
+    background-image: 
+        radial-gradient(
+            at right top,
+            transparent 70%,
+            rgba($c__base-dk, 0.8) 70%,						
+        ), 
+        radial-gradient(
+            circle at 25% 35%,
+            rgba($c__base-dk, 0.5) 35%,
+            transparent 35%,			
+        ), 
+        radial-gradient(
+            circle,
+            rgba($c__base-subtle, 1) 50%,
+            rgba($c__base, 1) 50%,			
+        ), 	
+    ; //
+} //
+

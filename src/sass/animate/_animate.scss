@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+//-------------------------------------------------------
+// Animate.scss Globals
+// true || false
+//-------------------------------------------------------
+
+$bounce:          false;
+$bounceIn:        false;
+$bounceInDown:    false;
+$bounceInLeft:    false;
+$bounceInRight:   false;
+$bounceInUp:      false;
+
+$bounceOut:       false;
+$bounceOutDown:   false;
+$bounceOutLeft:   false;
+$bounceOutRight:  false;
+$bounceOutUp:     false;
+
+$fadeIn:          true; // MobileMenu
+$fadeInDown:      false;
+$fadeInDownBig:   false;
+$fadeInLeft:      false;
+$fadeInLeftBig:   false;
+$fadeInRight:     true; // MobileMenu
+$fadeInRightBig:  false;
+$fadeInUp:        false;
+$fadeInUpBig:     false;
+
+$fadeOut:         true; // MobileMenu
+$fadeOutDown:     false;
+$fadeOutDownBig:  false;
+$fadeOutLeft:     false;
+$fadeOutLeftBig:  false;
+$fadeOutRight:    false;
+$fadeOutRightBig: false;
+$fadeOutUp:       false;
+$fadeOutUpBig:    false;
+
+$flash:         false;
+
+$flip:          false;
+$flipInX:       false;
+$flipInY:       false;
+$flipOutX:      false;
+$flipOutY:      false;
+
+$headShake:     false;
+$heartBeat:     false;
+$hinge:         false;
+$jackInTheBox:  false;
+$jello:         false;
+
+$lightSpeedIn:  false;
+$lightSpeedOut: false;
+
+$pulse:         false;
+
+$rollIn:        false;
+$rollOut:       false;
+
+$rotateIn:           false;
+$rotateInDownLeft:   false;
+$rotateInDownRight:  false;
+$rotateInUpLeft:     false;
+$rotateInUpRight:    false;
+
+$rotateOut:          false;
+$rotateOutDownLeft:  false;
+$rotateOutDownRight: false;
+$rotateOutUpLeft:    false;
+$rotateOutUpRight:   false;
+
+$rubberBand:   false;
+
+$scaleInDown:   true; // Mobile Menu
+$scaleOutUp:    true; // Mobile Menu 
+
+$shake:         false;
+
+$slideInDown:   true; // overlay hover
+$slideInLeft:   true; // overlay hover
+$slideInRight:  true; // MobileMenu, overlay hover
+$slideInUp:     true; // overlay hover
+
+$slideOutDown:  true; // overlay hover
+$slideOutLeft:  true; // overlay hover
+$slideOutRight: true; // MobileMenu, overlay hover
+$slideOutUp:    true; // overlay hover
+
+$swing:         false;
+$tada:          false;
+$wobble:        false;
+
+$zoomIn:        false;
+$zoomInDown:    false;
+$zoomInLeft:    false;
+$zoomInRight:   false;
+$zoomInUp:      false;
+
+$zoomOut:       false;
+$zoomOutDown:   false;
+$zoomOutLeft:   false;
+$zoomOutRight:  false;
+$zoomOutUp:     false;
+

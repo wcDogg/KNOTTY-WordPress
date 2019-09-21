@@ -1,33 +1,50 @@
-// 
-// @file /sass/typography/_headings.scss
-//  
+@charset "UTF-8";
 
+// -----------------------------------------
+// Headings
+// -----------------------------------------
 
 h1,h2,h3,h4,h5,h6 {	
 	line-height: 1.125;
 	margin: 0;
-	padding: 0.5rem 0;
+	padding: 0;
 	text-transform: uppercase;
-	color: $color__heading;
 } 
 
 h1 { 
-	@include condensed-700;
-	@include font-size(1.424);
+	font-family: $font-family__heading;
+	font-weight: 600;
+	@include font-size(h1);
+	color: $c__heading;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: $font-family__subheading;
+	font-weight: 300;
+	color: $c__sub-heading;
+	text-transform: uppercase;
+	letter-spacing: 1px;	
 }
 
 h2 { 
-	@include condensed-400;
-	@include font-size(1.266);
+	@include font-size(h2);
 }
 
 h3 {
-	@include condensed-400;
-	@include font-size(1);
+	@include font-size(h3);
 }
 
 h4 { 
-	@include condensed-400;
-	@include font-size(0.89);
+	@include font-size(h4);
+}
+
+h5 { 
+	@include font-size(h5);
+}
+
+h6 { 
+	@include font-size(h6);
 }
 

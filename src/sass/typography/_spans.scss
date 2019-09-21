@@ -1,32 +1,35 @@
-// 
-// @file /typography/_spans.scss
-//  
+@charset "UTF-8";
+
+// -----------------------------------------
+// Spans
+// -----------------------------------------
 
 %big,
 .big {
-  @include condensed-700;
-  font-size: 2rem;
-  color: rgba($color__text-lt, 0.85);
-  line-height: 1;
+  @include font-size(big);
+  font-family: $font-family__heading;
+  font-weight: 600;
+  color: $c__base-bright;
+  line-height: 1.125;
 }
 
 %strong,
 b, strong { 
-  @include condensed-700;
+  font-weight: 600;
   text-transform: uppercase;
-  // text-decoration: underline;
-  // text-decoration-style: dotted;
-  // text-decoration-color: #E0E0E0;
 } 
 
 %italic,
 .italic {
-    @include serif-400i;
-    @include font-size(0.79);  // Adjust for font differences      
+    font-family: $font-family__serif;
+    font-style: italic;
+    @include font-size(small);  // Adjust for font differences      
 }
 
 %small,
-small { @include font-size(.79); }
+small { 
+  @include font-size(small); 
+}
 
 
 

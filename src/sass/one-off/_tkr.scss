@@ -1,0 +1,51 @@
+@charset 'UTF-8';
+
+// ------------------------------------------------
+// Turks Head Reference
+// ------------------------------------------------
+
+// wide
+//<i class="fal fa-rectangle-wide"></i>
+
+// square
+// <i class="fal fa-square"></i>
+
+// times
+// <i class="fal fa-times"></i>
+
+// prime
+// <span class="prime">#</span>
+
+// tall
+// <i class="fal fa-rectangle-wide fa-rotate-90"></i>
+
+// Icons
+.thr {
+    .fa-times { 
+        color: $c__base-lt;
+    }
+    .fa-square { 
+        color: $c__pink; 
+    } 
+    .fa-rectangle-wide {
+        color: $c__blue; 
+    }
+    .fa-hashtag, 
+    .prime  { 
+        color: $c__cyan; 
+    }   
+    .fal.fa-rectangle-portrait,
+    .fa-rectangle-wide.fa-rotate-90 { 
+        color: $c__yellow;
+    }      
+}
+
+
+.thr table {
+    th:not(:first-child),
+    td:not(:first-child) {
+        text-align: center;
+        width: 2.28em;
+    }
+}
+
