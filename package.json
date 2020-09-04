@@ -37,7 +37,7 @@
     "cpy-cli": "^2.0.0",
     "del-cli": "^2.0.0",
     "make-dir-cli": "^2.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.3"
   }
